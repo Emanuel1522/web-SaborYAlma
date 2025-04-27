@@ -1,4 +1,4 @@
-
+import miLogo from '../assets/logos/img_2795.png'
 
 const Encabezado = ()=> {
     return(
@@ -6,7 +6,7 @@ const Encabezado = ()=> {
         <nav>
             <div class="nav-logo">
                 <a href="./index.html">
-                    <img src="./IMAGES/LOGOS/IMG_2795.PNG" alt="Logo Corto en blanco" />
+                    <img src={miLogo} alt="Logo Corto en blanco" />
                 </a>
             </div>
             <div class="menu-icon" onclick="toggleMenu()">

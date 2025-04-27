@@ -1,17 +1,23 @@
 import { useState } from 'react'
 import './style.css'
-import Encabezado from './componentes/Encabezado'
-import BanderaPrincipal from './componentes/BanderaPrincipal'
+import './mobile.css'
+
+import VolverInicio from './detallesPedido/VolverInicio'
+import DetallesPrincipales from './detallesPedido/DetallesPrincipales'
+import IngresarDireccion from './detallesPedido/IngresarDireccion'
+
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
-    <Encabezado />
-    <BanderaPrincipal />
+      <VolverInicio />
+      <DetallesPrincipales />
+      <IngresarDireccion />
     </>
   )
 }
 
-export default App
+export default App;
+
