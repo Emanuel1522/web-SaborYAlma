@@ -8,8 +8,8 @@ const RealizarPedido = () => {
         <>
         <Encabezado />
         <div>
-            <h1 class="menu-title">Lista de Platos</h1>
-            <div class="menu-container">
+            <h1 className="menu-title">Lista de Platos</h1>
+            <div className="menu-container">
                 <h2>Entradas / Starters</h2>
                 <div className='listaPlatos'>
                     {entradas.map((entrada) => (

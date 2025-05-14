@@ -1,39 +1,105 @@
+import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { alertaExistente } from "../helper/funciones"
+import { usuarios } from "../services/database";
 import Encabezado from "../componentes/Encabezado";
 import PieDePagina from "../componentes/PiePagina";
 
 const CrearCuenta = () => {
+    let redireccion = useNavigate();
+
+    const[nombre, setNombre] = useState("")
+    const[apellido, setApellido] = useState("")
+    const[correo, setCorreo] = useState("")
+    const[contraseña, setContraseña] = useState("")
+
+    function registrarUsuario() {
+        const existe = usuarios.some((usuario) => usuario.correo === correo);
+        if(existe){
+            alertaExistente();
+            return;
+        };
+
+        const nuevoUsuario = {
+            nombre,
+            apellido,
+            correo,
+            contraseña
+        };
+        usuarios.push(nuevoUsuario);
+        redireccion("/realizarPedido")
+        
+        setNombre("");
+        setApellido("");
+        setCorreo("");
+        setContraseña("");
+
+        alert("usuario registrado")
+    }
+
     return(
         <>
         <Encabezado />
         <main id="main-container-registro">
-            <div class="flex-registro">
-                <section class="left-flex-registro">
-                    <div class="registro-titulo">
+            <div className="flex-registro">
+                <section className="left-flex-registro">
+                    <div className="registro-titulo">
                         <h2>Crea tu cuenta</h2>
                     </div>
-                    <div class="registro-formulario" >
-                        <form >
-                            <input type="text" id="nombres" name="nombres" placeholder="Nombres" required class="nom-registro" />
-                            <input type="text" id="usuario-email" name="usuario-email" placeholder="Usuario o email" required class="apell-registro" />
-                            <input type="text" id="apellidos" name="apellidos" placeholder="Apellidos" required class="U-ema" />
-                            <div class="contraseña-container">
-                                <input type="password" id="contraseña" name="contraseña" placeholder="Contraseña" required class="con-registro" />
-                                <button type="button" id="togglePassword">Ver</button>
-                            </div>
-                            <div class="terminos-registro">
+                    <div className="registro-formulario" >
+                        <form>
+                            <input 
+                                type ="text" 
+                                placeholder ="NOMBRE" 
+                                required 
+                                id ="nombres" 
+                                className ="nom-registro"
+                                value={nombre}
+                                onChange={(e) => setNombre(e.target.value)} />
+                            <input 
+                                type="text" 
+                                placeholder="CORREO" 
+                                required 
+                                id="usuario-email" 
+                                className="apell-registro" 
+                                value={correo}
+                                onChange={(e) => setCorreo(e.target.value)}/>
+                            <input 
+                                type="text" 
+                                placeholder="APELLIDO" 
+                                required 
+                                id="apellidos" 
+                                className="U-ema" 
+                                value={apellido}
+                                onChange={(e) => setApellido(e.target.value)}/>
+                            <input 
+                                type="password" 
+                                id="contraseña" 
+                                name="contraseña" 
+                                placeholder="CONTRASEÑA" 
+                                required 
+                                className="con-registro" 
+                                value={contraseña}
+                                onChange={(e) => setContraseña(e.target.value)} />
+                            <div className="terminos-registro">
                                 <input type="checkbox" id="terminos" name="terminos" required />
                                 <label for="terminos">
-                                    He leído los <span class="subrayado-rojo">términos y condiciones de uso</span> y la <span class="subrayado-rojo">política de privacidad</span>.</label>
+                                    He leído los <span className="subrayado-rojo">términos y condiciones de uso</span> y la <span className="subrayado-rojo">política de privacidad</span>.</label>
                             </div>
-                            <div class="flex-div-form-registro-bottom">
-                                <div class="boton-registro"></div>
-                                <button type="submit" class="Btn-registro" id="registrarBtn">Registrarse</button>
+                            <div className="flex-div-form-registro-bottom">
+                                <div className="boton-registro"></div>
+                                <button 
+                                    type="submit" 
+                                    className="Btn-registro" 
+                                    id="registrarBtn"
+                                    onClick= {(e) => { e.preventDefault(); registrarUsuario();}} >Registrarse
+                                </button>
                             </div>
                         </form>
-                        <p>¿Ya tienes una cuenta? <a href="./iniciarSesion.html">Inicia sesión aquí</a>.</p>
+                        <p>¿Ya tienes una cuenta? <Link to="/inicioSesion">Inicia sesion aqui</Link>.</p>
                     </div>
                 </section>
-                <div class="right-flex-registro"></div>
+                <div className="right-flex-registro"></div>
             </div>
         </main>
         <PieDePagina />

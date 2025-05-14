@@ -17,6 +17,28 @@ import StriploinCertifiedAngusBeef from '../assets/menuRestaurante/StriploinCert
 import PicanhaCertifiedAngus from '../assets/menuRestaurante/PicanhaCertifiedAngus.jpg';
 import PulpoSaborYAlma from '../assets/menuRestaurante/PulpoSaborYAlma.jpg';
 
+import CrumbleDeCaramelo from '../assets/menuRestaurante/CrumbleDeCaramelo.jpg';
+import VolcanDeArequipe from '../assets/menuRestaurante/VolcanDeArequipe.jpg';
+import VolcanDeChocolate from '../assets/menuRestaurante/PulpoSaborYAlma.jpg';
+import TorreDeCaramelo from '../assets/menuRestaurante/TorreDeCaramelo.jpg';
+import CheescakeFrutosRojos from '../assets/menuRestaurante/CheescakeFrutosRojos.jpg';
+
+export const usuarios = [
+    {
+        id:1,
+        nombre:"Emanuel",
+        apellido:"Rojas",
+        correo:"emanuel@gmail.com",
+        contraseña:"emanuel",
+    },
+    {
+        id:2,
+        nombre:"Jeanpierry",
+        apellido:"Moreno",
+        correo:"jeanpier@gmail.com",
+        contraseña:"jean",
+    },
+]
 
 export const entradas = [
     {
@@ -222,31 +244,31 @@ export const platosFuertes = [
 // Array de los postres
 export const postres = [
     {
-        imagen: '../IMAGES/MENUSABORYALMA/CrumbleDeCaramelo.jpg',
+        imagen: CrumbleDeCaramelo,
         nombre: 'Crumble de Caramelo',
         descripcion: 'Trozos de galleta rellena de caramelo horneada y bañada con caramelo caliente, acompañada de fresas y helado de vainilla.',
         precio: 17000
     },
     {
-        imagen: '../IMAGES/MENUSABORYALMA/VolcanDeArequipe.jpg',
+        imagen: VolcanDeArequipe,
         nombre: 'Volcán de Arequipe',
         descripcion: 'Suave masa de galleta rellena de arequipe caliente, acompañado de helado de vainilla.',
         precio: 15500
     },
     {
-        imagen: '../IMAGES/MENUSABORYALMA/VolcanDeChocolate.jpg',
+        imagen: VolcanDeChocolate,
         nombre: 'Volcán de Chocolate',
         descripcion: 'Torta de chocolate rellena de chocolate caliente, acompañado de helado de vainilla.',
         precio: 15500
     },
     {
-        imagen: '../IMAGES/MENUSABORYALMA/TorreDeCaramelo.jpg',
+        imagen: TorreDeCaramelo,
         nombre: 'Torre de Caramelo',
         descripcion: 'Torre de galletas crocantes, helado artesanal de vainilla y caramelo salado, salsa de caramelo y nuez pecana garrapiñada.',
         precio: 17500
     },
     {
-        imagen: '../IMAGES/MENUSABORYALMA/CheescakeFrutosRojos.jpg',
+        imagen: CheescakeFrutosRojos,
         nombre: 'Cheesecake Frutos Rojos',
         descripcion: 'Crema de cheesecake con base de galleta bañada en salsa de frutos rojos.',
         precio: 13000

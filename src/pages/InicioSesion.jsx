@@ -1,28 +1,68 @@
 import Encabezado from "../componentes/Encabezado";
 import PieDePagina from "../componentes/PiePagina";
+import { usuarios } from "../services/database.js"
+import { alertaRedireccion, alertaError, generarToken } from "../helper/funciones.js";
+import { Link, useNavigate } from "react-router-dom";
+import { useState } from "react";
 
 const InicioSesion = () => {
+    let redireccion = useNavigate();
+    const [cliente, setCliente] = useState("")
+    const [contraseña, setContraseña] = useState("")
+
+    function buscarUsuario() {
+        return usuarios.find((e) => e.nombre.toLowerCase() === cliente.toLowerCase() && e.contraseña === contraseña)
+    }
+
+    function redirigirUsuario() {
+        const usuario = buscarUsuario();
+        if (usuario) {
+            let token = generarToken();
+            localStorage.setItem("token", token);
+            localStorage.setItem("usuarioActivo", JSON.stringify(usuario));
+            alertaRedireccion(redireccion, "Usuario encontrado", '/realizarPedido');
+        } else {
+            alertaError();
+        }
+    }
+
     return (
         <>
         <Encabezado />
         <main id="main-container-iniciarSesion">
-            <div class="flex-iniciarSesion">
-                <section class="flex-iniciarSesion_left">
-                    <img src="/public/logos/img2803.png" alt="logo negro largo" class="logo-negro" />
+            <div className="flex-iniciarSesion">
+                <section className="flex-iniciarSesion_left">
+                    <img src="/public/logos/img2803.png" alt="logo negro largo" className="logo-negro" />
                     <form action="">
-                        <input type="text" placeholder="Usuario o email" id="loginUsuario" name="email" required class="email-inicio" />
-                        <div class="contraseña-login-flex">
-                            <input type="password" id="loginContraseña" placeholder="Contraseña" class="contraseña-inicio" />
-                            <p>¿Olvidaste tu Contraseña? <a href="#"> <span class="subray-rojo"> Click aquí</span></a></p>
+                        <input onChange={(e)=> setCliente(e.target.value)} 
+                        type="text" 
+                        placeholder="NOMBRE" 
+                        required
+                        id="loginUsuario"
+                        className="email-inicio" />
+                        <div className="contraseña-login-flex">
+                            <input onChange={(e)=> setContraseña(e.target.value)} 
+                            type="password" 
+                            placeholder="CONTRASEÑA" 
+                            required
+                            id="loginContraseña" 
+                            className="contraseña-inicio"/>
+                            <p>¿Olvidaste tu Contraseña? <a href="#"> <span className="subray-rojo"> Click aquí</span></a></p>
                         </div>
-                        <button type="submit" id="iniciarSesionBtn" class="btn-inicio">Iniciar sesion</button>
+                        <button 
+                        type="submit"
+                        id="iniciarSesionBtn"
+                        className="btn-inicio"
+                        onClick={(e) => {
+                            e.preventDefault();
+                            redirigirUsuario();}}> Iniciar sesion </button>
                     </form>
-                    <div class="registrate">
+                    <div className="registrate">
                         <p>¿No has creado tu cuenta aun?</p>
-                        <a href="./registrar.html"> <span class="subray-verde"> Registrate aqui</span> </a>
+                        <Link to="/crearCuenta" className='subrayar-verde'> Registrate aqui </Link>
                     </div>
                 </section>
-                <div class="flex-iniciarSesion_right"></div>
+                <div className="flex-iniciarSesion_right"></div>
             </div>
         </main>
         <PieDePagina />
