@@ -1,23 +1,27 @@
 import { useState } from 'react'
-import './style.css'
-import './mobile.css'
-
-import VolverInicio from './detallesPedido/VolverInicio'
-import DetallesPrincipales from './detallesPedido/DetallesPrincipales'
-import IngresarDireccion from './detallesPedido/IngresarDireccion'
-
+import './App.css'
+import PaginaPrincipal from './pages/PaginaPrincipal'
+import QuienesSomos from './pages/QuinesSomos'
+import RealizarPedido from './pages/RealizarPedido'
+import InicioSesion from './pages/InicioSesion'
+import CrearCuenta from './pages/CrearCuenta'
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
-      <VolverInicio />
-      <DetallesPrincipales />
-      <IngresarDireccion />
+    
     </>
   )
 }
 
-export default App;
+export default App
 
+/*
+<PaginaPrincipal />
+<QuienesSomos />
+<RealizarPedido />
+<InicioSesion />
+<CrearCuenta />
+*/

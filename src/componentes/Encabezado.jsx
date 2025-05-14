@@ -1,28 +1,28 @@
-import miLogo from '../assets/logos/img_2795.png'
+import { Link } from 'react-router-dom';
 
-const Encabezado = ()=> {
-    return(
-    <header>
-        <nav>
+const Encabezado = () => {
+    return (
+        <header>
+            <nav>
             <div class="nav-logo">
-                <a href="./index.html">
-                    <img src={miLogo} alt="Logo Corto en blanco" />
-                </a>
+                <Link to="/">
+                    <img src="/public/logos/img2795.png" alt="Logo Corto en blanco" />
+                </Link>
             </div>
             <div class="menu-icon" onclick="toggleMenu()">
                 ☰
             </div>
             <div class="nav-menu" id="nav-menu">
                 <ul>
-                    <li><a href="./HTML/quienesSomos.html">¿Quienes somos?</a></li>
-                    <li><a href="./HTML/iniciarSesion.html">Reservar mesa</a></li>
-                    <li><a href="./HTML/iniciarSesion.html">Realizar un pedido</a></li>
-                    <li><a id="iniciar-sesion-boton" href="/HTML/iniciarSesion.html">Iniciar sesión</a></li>
-                    <li><a id="crear-cuenta-boton" href="/HTML/registrar.html">Crear cuenta</a></li>
+                    <li><Link to="/quienesSomos">¿Quienes somos?</Link></li>
+                    <li><Link to="/realizarPedido">RealizarPedido</Link></li>
+                    <li><Link to="/inicioSesion">Iniciar sesion</Link></li>
+                    <li><Link to="/crearCuenta">Crear cuenta</Link></li>
                 </ul>
             </div>
         </nav>
-    </header>
-    )
-}
-export default Encabezado
+        </header>
+    );
+};
+
+export default Encabezado;

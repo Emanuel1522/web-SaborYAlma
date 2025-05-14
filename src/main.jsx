@@ -1,10 +1,11 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
+import { enrutador } from './router/enrutador.jsx'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import './Index.css'
-import App from './App.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <App />
+    <RouterProvider router={createBrowserRouter(enrutador)} />
   </StrictMode>,
 )
