@@ -4,11 +4,12 @@ const Encabezado = () => {
     let redireccion = useNavigate();
 
     function varificarSesion() {
-        let usuarioActivo = localStorage.getItem("usuarioActivo");
-        if(usuarioActivo){
+        let tokenActivo = localStorage.getItem("token");
+        if(tokenActivo){
             redireccion("/realizarPedido");
         } else {
             redireccion("/inicioSesion");
+            alert("Por favor inicie sesion")
         }
     }
     return (

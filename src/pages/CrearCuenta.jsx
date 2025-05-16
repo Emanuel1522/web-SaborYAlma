@@ -15,11 +15,15 @@ const CrearCuenta = () => {
     const[contraseña, setContraseña] = useState("")
 
     function registrarUsuario() {
-        const existe = usuarios.some((usuario) => usuario.correo === correo);
-        if(existe){
-            alertaExistente();
-            return;
-        };
+        let usuariosLocales = JSON.parse(localStorage.getItem("usuarios")) || [];
+
+        const existeEnDatabase = usuarios.some((usuario) => usuario.correo === correo);
+        const existeEnLocalStorage = usuariosLocales.some((usuario) => usuario.correo === correo);
+
+        if (existeEnDatabase || existeEnLocalStorage) {
+        alertaExistente();
+        return;
+        }
 
         const nuevoUsuario = {
             nombre,
@@ -27,9 +31,13 @@ const CrearCuenta = () => {
             correo,
             contraseña
         };
-        localStorage.setItem("usuario", JSON.stringify(nuevoUsuario));
+
+        usuariosLocales.push(nuevoUsuario);
+        localStorage.setItem("usuarios", JSON.stringify(usuariosLocales));
+
+        /*localStorage.setItem("usuario", JSON.stringify(nuevoUsuario)); */
         let token = generarToken();
-                    localStorage.setItem("token", token);
+        localStorage.setItem("token", token);
         redireccion("/realizarPedido")
         
         setNombre("");
@@ -37,7 +45,7 @@ const CrearCuenta = () => {
         setCorreo("");
         setContraseña("");
 
-        alert("usuario registrado")
+        alert("Usuario registrado")
     }
 
     return(

@@ -11,7 +11,9 @@ const InicioSesion = () => {
     const [contraseña, setContraseña] = useState("")
 
     function buscarUsuario() {
-        return usuarios.find((e) => e.nombre.toLowerCase() === cliente.toLowerCase() && e.contraseña === contraseña)
+        let usuariosLocales = JSON.parse(localStorage.getItem("usuarios")) || [];
+        let todosLosUsuarios = [...usuarios, ...usuariosLocales];
+        return todosLosUsuarios.find((e) => e.nombre.toLowerCase() === cliente.toLowerCase() && e.contraseña === contraseña)
     }
 
     function redirigirUsuario() {
@@ -19,7 +21,6 @@ const InicioSesion = () => {
         if (usuario) {
             let token = generarToken();
             localStorage.setItem("token", token);
-            localStorage.setItem("usuarioActivo", JSON.stringify(usuario));
             alertaRedireccion(redireccion, "Usuario encontrado", '/realizarPedido');
         } else {
             alertaError();
