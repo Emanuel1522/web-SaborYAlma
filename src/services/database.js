@@ -33,10 +33,10 @@ export const usuarios = [
     },
     {
         id:2,
-        nombre:"Jeanpierry",
+        nombre:"Jeanpier",
         apellido:"Moreno",
         correo:"jeanpier@gmail.com",
-        contraseña:"jean",
+        contraseña:"jeanpier",
     },
 ]
 

@@ -42,3 +42,15 @@ export function generarToken() {
   let token = "token_" + Math.random().toString(36).substring(2) + "-" + Math.random().toString(36).substring(2);
   return token;
 }
+
+export function alertaGeneral(redireccion, mensaje, ruta) {
+    Swal.fire({
+        title: mensaje,
+        icon: "info",
+        confirmButtonText: "Ok",
+    }).then(() => {
+        if (ruta) {
+            redireccion(ruta);
+        }
+    });
+}

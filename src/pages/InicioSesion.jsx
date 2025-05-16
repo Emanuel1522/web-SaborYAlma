@@ -7,13 +7,13 @@ import { useState } from "react";
 
 const InicioSesion = () => {
     let redireccion = useNavigate();
-    const [cliente, setCliente] = useState("")
+    const [correo, setCorreo] = useState("")
     const [contraseña, setContraseña] = useState("")
 
     function buscarUsuario() {
         let usuariosLocales = JSON.parse(localStorage.getItem("usuarios")) || [];
         let todosLosUsuarios = [...usuarios, ...usuariosLocales];
-        return todosLosUsuarios.find((e) => e.nombre.toLowerCase() === cliente.toLowerCase() && e.contraseña === contraseña)
+        return todosLosUsuarios.find((e) => e.correo.toLowerCase() === correo.toLowerCase() && e.contraseña === contraseña)
     }
 
     function redirigirUsuario() {
@@ -35,9 +35,9 @@ const InicioSesion = () => {
                 <section className="flex-iniciarSesion_left">
                     <img src="/public/logos/img2803.png" alt="logo negro largo" className="logo-negro" />
                     <form action="">
-                        <input onChange={(e)=> setCliente(e.target.value)} 
+                        <input onChange={(e)=> setCorreo(e.target.value)} 
                         type="text" 
-                        placeholder="NOMBRE" 
+                        placeholder="CORREO" 
                         required
                         id="loginUsuario"
                         className="email-inicio" />

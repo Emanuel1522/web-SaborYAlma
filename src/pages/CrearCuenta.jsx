@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { alertaExistente } from "../helper/funciones"
+import { alertaExistente, alertaGeneral } from "../helper/funciones"
 import { usuarios } from "../services/database";
 import Encabezado from "../componentes/Encabezado";
 import PieDePagina from "../componentes/PiePagina";
@@ -34,18 +34,14 @@ const CrearCuenta = () => {
 
         usuariosLocales.push(nuevoUsuario);
         localStorage.setItem("usuarios", JSON.stringify(usuariosLocales));
-
-        /*localStorage.setItem("usuario", JSON.stringify(nuevoUsuario)); */
+        alertaGeneral(redireccion, "Usuario registrado con exito", "/realizarPedido")
         let token = generarToken();
         localStorage.setItem("token", token);
-        redireccion("/realizarPedido")
         
         setNombre("");
         setApellido("");
         setCorreo("");
         setContraseña("");
-
-        alert("Usuario registrado")
     }
 
     return(
@@ -58,11 +54,17 @@ const CrearCuenta = () => {
                         <h2>Crea tu cuenta</h2>
                     </div>
                     <div className="registro-formulario" >
-                        <form>
+                        <form onSubmit={(e) => {
+                            e.preventDefault();
+                            if (!nombre || !apellido || !correo || !contraseña || !document.getElementById("terminos").checked) {
+                                alertaGeneral(null, "Por favor, llena todos los campos y acepta los términos.", null)
+                                return;
+                            }
+                            registrarUsuario();
+                            }}>
                             <input 
                                 type ="text" 
                                 placeholder ="NOMBRE" 
-                                required 
                                 id ="nombres" 
                                 className ="nom-registro"
                                 value={nombre}
@@ -70,7 +72,6 @@ const CrearCuenta = () => {
                             <input 
                                 type="text" 
                                 placeholder="CORREO" 
-                                required 
                                 id="usuario-email" 
                                 className="apell-registro" 
                                 value={correo}
@@ -78,7 +79,6 @@ const CrearCuenta = () => {
                             <input 
                                 type="text" 
                                 placeholder="APELLIDO" 
-                                required 
                                 id="apellidos" 
                                 className="U-ema" 
                                 value={apellido}
@@ -88,12 +88,11 @@ const CrearCuenta = () => {
                                 id="contraseña" 
                                 name="contraseña" 
                                 placeholder="CONTRASEÑA" 
-                                required 
                                 className="con-registro" 
                                 value={contraseña}
                                 onChange={(e) => setContraseña(e.target.value)} />
                             <div className="terminos-registro">
-                                <input type="checkbox" id="terminos" name="terminos" required />
+                                <input type="checkbox" id="terminos" name="terminos"/>
                                 <label for="terminos">
                                     He leído los <span className="subrayado-rojo">términos y condiciones de uso</span> y la <span className="subrayado-rojo">política de privacidad</span>.</label>
                             </div>
@@ -102,8 +101,8 @@ const CrearCuenta = () => {
                                 <button 
                                     type="submit" 
                                     className="Btn-registro" 
-                                    id="registrarBtn"
-                                    onClick= {(e) => { e.preventDefault(); registrarUsuario();}} >Registrarse
+                                    id="registrarBtn">
+                                        Registrarse
                                 </button>
                             </div>
                         </form>
