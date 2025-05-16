@@ -26,7 +26,7 @@ const CrearCuenta = () => {
             correo,
             contraseña
         };
-        usuarios.push(nuevoUsuario);
+        localStorage.setItem("nuevoUsuario", JSON.stringify(nuevoUsuario));
         redireccion("/realizarPedido")
         
         setNombre("");
