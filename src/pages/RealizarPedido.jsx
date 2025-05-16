@@ -4,6 +4,7 @@ import Encabezado from "../componentes/Encabezado";
 import PieDePagina from "../componentes/PiePagina";
 
 const RealizarPedido = () => {
+
     return(
         <>
         <Encabezado />

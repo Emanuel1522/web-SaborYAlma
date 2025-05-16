@@ -10,7 +10,7 @@
 
 ###
 
-<p align="left">Emanuel Rojas Ramirez - emanuel.rr1522@gmail.com<br>Jeanpierry Moreno - jeanpimoreno1607@gmail.com<br>Juan Fernando Ramirez Ramirez - juanfernandor67@gmail.com<br>Ana Sofia Acevedo Quiroz - anasofiaacevedoquiroz086@gmail.com</p>
+<p align="left">Emanuel Rojas Ramirez - 1058078442 - emanuel.rr1522@gmail.com<br>Jeanpierry Moreno - 1116435747 - jeanpimoreno1607@gmail.com<br>Juan Fernando Ramirez Ramirez - 1023031121 - juanfernandor67@gmail.com<br>Ana Sofia Acevedo Quiroz - 1027804590 - anasofiaacevedoquiroz086@gmail.com</p>
 
 ###
 

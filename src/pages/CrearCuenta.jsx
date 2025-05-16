@@ -4,6 +4,7 @@ import { alertaExistente } from "../helper/funciones"
 import { usuarios } from "../services/database";
 import Encabezado from "../componentes/Encabezado";
 import PieDePagina from "../componentes/PiePagina";
+import { generarToken } from "../helper/funciones";
 
 const CrearCuenta = () => {
     let redireccion = useNavigate();
@@ -26,7 +27,9 @@ const CrearCuenta = () => {
             correo,
             contraseña
         };
-        localStorage.setItem("nuevoUsuario", JSON.stringify(nuevoUsuario));
+        localStorage.setItem("usuario", JSON.stringify(nuevoUsuario));
+        let token = generarToken();
+                    localStorage.setItem("token", token);
         redireccion("/realizarPedido")
         
         setNombre("");
