@@ -23,7 +23,7 @@ const Productos = () => {
                             key={entrada.id} 
                             plato={entrada} 
                             nombreBoton="Realizar pedido"
-                            requiereSesion={false}
+                            requiereSesion={true}
                         />
                     ))}
                 </div>
@@ -34,7 +34,7 @@ const Productos = () => {
                             key={platoFuerte.id} 
                             plato={platoFuerte}
                             nombreBoton="Realizar pedido" 
-                            requiereSesion={false}
+                            requiereSesion={true}
                         />
                     ))}
                 </div>
@@ -45,7 +45,7 @@ const Productos = () => {
                             key={postre.id} 
                             plato={postre} 
                             nombreBoton="Realizar pedido"
-                            requiereSesion={false}
+                            requiereSesion={true}
                         />
                     ))}
                 </div>

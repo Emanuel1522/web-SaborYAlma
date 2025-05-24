@@ -4,9 +4,11 @@ import Encabezado from "../componentes/Encabezado";
 import PieDePagina from "../componentes/PiePagina";
 import CarritoModal from "../componentes/CarritoModal";
 import { useState } from "react";
+import { useCarrito } from "../componentes/CarritoCompras";
 
 const RealizarPedido = () => {
     const [mostrarCarrito, setMostrarCarrito] = useState(false);
+    const { carrito } = useCarrito();
 
     return(
         <>
@@ -14,9 +16,9 @@ const RealizarPedido = () => {
         <CarritoModal mostrar={mostrarCarrito} cerrar={() => setMostrarCarrito(false)} />
         <div>
             <h1 className="menu-title">Lista de Platos</h1>
+            <button className="botonCarrito" onClick={() => setMostrarCarrito(true)}>🛒 {carrito.length > 0 && <span className="contador-carrito">{carrito.length}</span>}</button>
             <div className="menu-container">
                 <h2>Entradas / Starters</h2>
-                <button onClick={() => setMostrarCarrito(true)}>🛒</button>
                 <div className='listaPlatos'>
                     {entradas.map((entrada) => (
                         <TarjetaPlatosPedido 

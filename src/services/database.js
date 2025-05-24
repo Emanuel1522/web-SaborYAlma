@@ -46,7 +46,7 @@ export const entradas = [
         imagen: tostadasNikkei,
         nombre: 'Tostadas Nikkei',
         descripcion: 'Tostadas de gyozas crocantes, atún y salmón en salsa nikkei, aroma de gari, puerro crocante caramelizado.',
-        precio: "$35000",
+        precio: 35000,
         ingredientesQuitar: ['Atún', 'Salmón', 'Puerro crocante caramelizado'],
         ingredientesAñadir: [{ ingrediente: 'Pollo crocante', precio: 8000 }]
     },
@@ -55,7 +55,7 @@ export const entradas = [
         imagen: RollitosHeisei,
         nombre: 'Rollitos Heisei',
         descripcion: 'Envueltos de salmón, queso philadelphia, hilos de mango, palmitos de cangrejo, salsa heisei, queso parmesano flameado.',
-        precio: "$34000",
+        precio: 34000,
         ingredientesQuitar: ['Queso Philadelphia', 'Hilos de Mango', 'Palmito de cangrejo', 'Queso parmesano flameado'],
         ingredientesAñadir: [{ ingrediente: 'Camarones', precio: 12000 }]
     },
@@ -64,7 +64,7 @@ export const entradas = [
         imagen: TatakiDeAtun,
         nombre: 'Tataki de Atún Trufado',
         descripcion: 'Finos cortes de atún encostrados en pimienta y sellado en parrilla bañado en salsa cremosa nikkei y aceite de trufa coronado con puerro caramelizado y gyoza crocante.',
-        precio: "$39000",
+        precio: 39000,
         ingredientesQuitar: ['Salsa cremosa nikkei', 'Aceite de trufa', 'Puerro caramelizado', 'Gyoza crocante'],
         ingredientesAñadir: [
             { ingrediente: 'Tofu marinado', precio: 6000 },
@@ -76,7 +76,7 @@ export const entradas = [
         imagen: TornadosDeSalmon,
         nombre: 'Tornados de Salmón',
         descripcion: 'Rollos de salmón rellenos de aguacate y queso philadelphia, bañados en salsa de anguila y coronados con palmitos de cangrejo.',
-        precio: "$39000",
+        precio: 39000,
         ingredientesQuitar: ['Aguacate', 'Queso Philadelphia', 'Palmito de cangrejo'],
         ingredientesAñadir: [
             { ingrediente: 'Atún marinado', precio: 10000 },
@@ -88,7 +88,7 @@ export const entradas = [
         imagen: TartarMixto,
         nombre: 'Tartar Mixto',
         descripcion: 'Atún y salmón en aderezo nikkei mezclados con aguacate y shoyu.',
-        precio: "$32000",
+        precio: 32000,
         ingredientesQuitar: ['Atún', 'Salmón', 'Aguacate', 'Shoyu'],
         ingredientesAñadir: [
             { ingrediente: 'Pulpo a la parrilla', precio: 14000 },
@@ -100,7 +100,7 @@ export const entradas = [
         imagen: WontonesDeSalmon,
         nombre: 'Wontones de Salmón',
         descripcion: 'Wontones de salmón acompañados de salsa cítrica de ají amarillo y salsa rocoto.',
-        precio: "$22000",
+        precio: 22000,
         ingredientesQuitar: ['Salsa cítrica de ají amarillo', 'Salsa rocoto'],
         ingredientesAñadir: [
             { ingrediente: 'Salsa de tamarindo', precio: 3000 },
@@ -113,7 +113,7 @@ export const entradas = [
         imagen: PorkBao,
         nombre: 'Pork Bao',
         descripcion: 'Pan asiático al vapor, pork belly caramelizado en cocción lenta, chucrut y manzana verde.',
-        precio: "$30000",
+        precio: 30000,
         ingredientesQuitar: ['Chucrut', 'Manzana verde'],
         ingredientesAñadir: [
             { ingrediente: 'Salsa hoisin', precio: 3000 },
@@ -131,7 +131,7 @@ export const platosFuertes = [
         imagen: LomoSaborYAlma,
         nombre: 'Lomo Sabor Y Alma',
         descripcion: 'Lomo a término en parrilla bañado en salsa madeira, sobre un arroz cremoso a base de setas y queso azul, coronado con parmesano.',
-        precio: "$55000",
+        precio: 55000,
         ingredientesQuitar: ['Parmessano', 'Setas', 'Queso azul'],
         ingredientesAñadir: [
             { ingrediente: 'Espárragos salteados', precio: 6000 },
@@ -143,7 +143,7 @@ export const platosFuertes = [
         imagen: LomoSelvaEnRissotoDeAjíAmarillo,
         nombre: 'Lomo Selva en Risotto de Ají Amarillo',
         descripcion: 'Lomito jugoso en cama de risotto al ají amarillo diseñado con salsa de fresa y hierbabuena.',
-        precio: "$53000",
+        precio: 53000,
         ingredientesQuitar: ['Salsa de fresa', 'Hierbabuena'],
         ingredientesAñadir: [
             { ingrediente: 'Salsa de tamarindo', precio: 3000 },
@@ -156,7 +156,7 @@ export const platosFuertes = [
         imagen: PolloTrufado,
         nombre: 'Pollo Trufado',
         descripcion: 'Julianas de pollo trufadas a la parrilla sobre una cama de pasta tipo Alfredo, coronadas con brotes.',
-        precio: "$37000",
+        precio: 37000,
         ingredientesQuitar: [],
         ingredientesAñadir: [
             { ingrediente: 'Queso parmessano', precio: 0 },
@@ -170,7 +170,7 @@ export const platosFuertes = [
         imagen: SalmonCremoso,
         nombre: 'Salmón Cremoso',
         descripcion: 'Filete de Salmón fresco a la parrilla, bañado en salsa cremosa blanca, pasta al pesto y crema de leche, coronado con quinua crocante.',
-        precio: "$55000",
+        precio: 55000,
         ingredientesQuitar: ['Quinua'],
         ingredientesAñadir: [
             { ingrediente: 'Pistachos triturado', precio: 2500 },
@@ -182,7 +182,7 @@ export const platosFuertes = [
         imagen: ArrozPeruano,
         nombre: 'Arroz Peruano de Mariscos',
         descripcion: 'Arroz en diversidad de mariscos a base de ají amarillo y especias peruanas.',
-        precio: "$60000",
+        precio: 60000,
         ingredientesQuitar: ['Mejillones', 'Camarones'],
         ingredientesAñadir: [
             { ingrediente: 'Pulpo', precio: 14000 },
@@ -196,7 +196,7 @@ export const platosFuertes = [
         imagen: PescadoTupac,
         nombre: 'Pescado Tupac',
         descripcion: 'Pescado blanco crocante con camarones bañados en salsa al leño a base de licor, champiñón y panceta, acompañados de papa rústica en cascos.',
-        precio: "$46000",
+        precio: 46000,
         ingredientesQuitar: ['Camarones', 'Champiñón', 'Panceta', 'Papas rusticas'],
         ingredientesAñadir: [
             { ingrediente: 'Alcachofas asadas', precio: 5000 },
@@ -208,7 +208,7 @@ export const platosFuertes = [
         imagen: TallarinesAlEstiloOriental,
         nombre: 'Tallarines al Estilo Oriental',
         descripcion: 'Tallarines envueltos con pulpo, calamar y camarones acompañados de pimentón, cebolla y ajonjolí bañados en salsa de anguila.',
-        precio: "$44000",
+        precio: 44000,
         ingredientesQuitar: ['Pulpo', 'Calamar', 'Camarones', 'Pimentón', 'Cebolla'],
         ingredientesAñadir: [
             { ingrediente: 'Tofu marinado', precio: 6000 },
@@ -221,7 +221,7 @@ export const platosFuertes = [
         imagen: StriploinCertifiedAngusBeef,
         nombre: 'Striploin Certified Angus Beef',
         descripcion: 'Certified Angus Beef. Acompañantes papas rústicas o a la francesa.',
-        precio: "$90000",
+        precio: 90000,
         ingredientesQuitar: [],
         ingredientesAñadir: [
             { ingrediente: 'Chimichurri', precio: 0 },
@@ -235,7 +235,7 @@ export const platosFuertes = [
         imagen: PicanhaCertifiedAngus,
         nombre: 'Picanha Certified Angus Beef',
         descripcion: 'Certified Angus Beef. Acompañantes papas rústicas o a la francesa.',
-        precio: "$93000",
+        precio: 93000,
         ingredientesQuitar: [],
         ingredientesAñadir: [
             { ingrediente: 'Chimichurri', precio: 0 },
@@ -249,7 +249,7 @@ export const platosFuertes = [
         imagen: PulpoSaborYAlma,
         nombre: 'Pulpo Sabor Y Alma',
         descripcion: 'Pulpo al horno en cocción lenta, encostrado de yuca con parmesano flameado y chimichurri nikkei.',
-        precio: "$60000",
+        precio: 60000,
         ingredientesQuitar: ['Parmessano'],
         ingredientesAñadir: [
             { ingrediente: 'Panko dorado', precio: 2000 },
@@ -265,34 +265,34 @@ export const postres = [
         imagen: CrumbleDeCaramelo,
         nombre: 'Crumble de Caramelo',
         descripcion: 'Trozos de galleta rellena de caramelo horneada y bañada con caramelo caliente, acompañada de fresas y helado de vainilla.',
-        precio: "$17000"
+        precio: 17000
     },
     {
         id: 19,
         imagen: VolcanDeArequipe,
         nombre: 'Volcán de Arequipe',
         descripcion: 'Suave masa de galleta rellena de arequipe caliente, acompañado de helado de vainilla.',
-        precio: "$15500"
+        precio: 15500
     },
     {
         id: 20,
         imagen: VolcanDeChocolate,
         nombre: 'Volcán de Chocolate',
         descripcion: 'Torta de chocolate rellena de chocolate caliente, acompañado de helado de vainilla.',
-        precio: "$15500"
+        precio: 15500
     },
     {
         id: 21,
         imagen: TorreDeCaramelo,
         nombre: 'Torre de Caramelo',
         descripcion: 'Torre de galletas crocantes, helado artesanal de vainilla y caramelo salado, salsa de caramelo y nuez pecana garrapiñada.',
-        precio: "$17500"
+        precio: 17500
     },
     {
         id: 22,
         imagen: CheescakeFrutosRojos,
         nombre: 'Cheesecake Frutos Rojos',
         descripcion: 'Crema de cheesecake con base de galleta bañada en salsa de frutos rojos.',
-        precio: "$13000"
+        precio: 13000
     }
 ];

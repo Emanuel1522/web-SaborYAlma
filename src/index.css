@@ -227,7 +227,7 @@ nav ul li .linkNav:hover {
     font-size: 1.15rem;
 }
 
-#platos-destacados .flex-container .plato .plato-img1{
+#platos-destacados .flex-container .plato .plato-img1 {
     background-size: cover;
     background-position: center;
     width: 200px;
@@ -462,7 +462,7 @@ footer p {
 }
 
 .item:hover {
-    transform: scale(1.05); 
+    transform: scale(1.05);
     box-shadow: 0px 0px 10px rgb(255, 0, 0);
 }
 
@@ -473,7 +473,7 @@ footer p {
     object-fit: cover;
 }
 
-.contenido{
+.contenido {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -481,64 +481,142 @@ footer p {
     width: 100%;
 }
 
-.modal-carrito {
+.botonCarrito {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0,0,0,0.6);
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  top: 100px;
+  right: 20px;
   z-index: 1000;
+  font-size: 30px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  padding: 15px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease;
+}
+
+.botonCarrito:hover {
+  transform: scale(1.1);
+  background-color: rgb(191, 29, 29);
+}
+
+.contador-carrito {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background-color: red;
+  color: white;
+  font-size: 16px;
+  border-radius: 50%;
+  padding: 4px 8px;
+}
+
+.modal-carrito {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
 }
 
 .contenido-modal {
-  background: white;
-  padding: 20px;
-  border-radius: 10px;
-  width: 600px;
-  min-height: 200px;
-  max-height: 80vh;
-  overflow-y: auto;
-  display: flex;
-  flex-direction: column;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 600px;
+    min-height: 200px;
+    max-height: 80vh;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
 }
 
 .item-carrito {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin: 10px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 10px 0;
 }
 
 .nombre-item {
-  flex: 2;
+    flex: 2;
 }
 
 .precio-item {
-  flex: 1;
-  text-align: right;
+    flex: 1;
+    text-align: right;
 }
 
 .cantidad-controles {
-  display: flex;
-  align-items: center;
-  gap: 4px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
 }
 
 .eliminar-item {
-  background: transparent;
-  border: none;
-  font-size: 18px;
-  color: #c00;
-  cursor: pointer;
+    background: transparent;
+    border: none;
+    font-size: 18px;
+    color: #c00;
+    cursor: pointer;
+}
+
+.contenedorBotonesCarrito {
+    align-self: center;
+    margin-top: auto;
+}
+
+.formulario-pago {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.input-pago {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.total-contenedor {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  margin-top: 10px;
 }
 
 .btn-cerrar {
-  margin-top: auto;
-  align-self: center;
+  margin-top: 10px;
+  background-color: #007bff;
+  color: white;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+.contenedorBotonesCarrito {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn-cerrar {
+    color: white;
+    background-color: black;
+    border-radius: 10px;
+    width: 150px;
+    height: 45px;
+    margin: 10px;
+    font-weight: bold;
 }
 
 /*Subpagina quienes somos*/
@@ -649,7 +727,7 @@ footer p {
     max-width: 500px;
 }
 
-.contenedorImagenRelleno{
+.contenedorImagenRelleno {
     width: 100%;
     height: 450px;
     overflow: hidden;
@@ -859,6 +937,7 @@ form .contraseña-container input {
 .logo-v {
     height: 80%;
 }
+
 #main-container-registro,
 #main-container-iniciarSesion {
     height: 600px;
@@ -957,45 +1036,52 @@ form .contraseña-container input {
 }
 
 /*Pagina de vista de cliente*/
-.main-paginaTemporal{
+.main-paginaTemporal {
     text-align: center;
     background-image: url(../IMAGES/OTHERS/home-main-header.jpg);
     background-size: cover;
     background-position: center;
     box-shadow: inset 1000px 1000px 1000px rgba(0, 0, 0, 0.5);
 }
-#welcomeMessage{
+
+#welcomeMessage {
     font-size: 4rem;
     color: white;
 }
-#divMain-vistaCliente{
+
+#divMain-vistaCliente {
     display: flex;
-   height: 40vh;
+    height: 40vh;
     justify-content: center;
     align-items: center;
     gap: 60px;
 }
-#divMain-vistaCliente button{
+
+#divMain-vistaCliente button {
     padding: 30px;
     font-size: 2rem;
     border: var(--third-color);
     border-radius: 10px;
 }
-#divMain-vistaCliente button:hover{
+
+#divMain-vistaCliente button:hover {
     background-color: var(--fifth-color);
     color: white
 }
-#divMain-vistaCliente button:active{
+
+#divMain-vistaCliente button:active {
     background-color: var(--fourth-color);
 }
 
-#regresar-a{
+#regresar-a {
     color: #ffffff;
     text-decoration: none;
 }
-#regresar-a:hover{
+
+#regresar-a:hover {
     color: var(--third-color);
 }
+
 #carrito {
     position: fixed;
     top: 10px;
@@ -1035,10 +1121,10 @@ form .contraseña-container input {
 
 body.modal-open {
     overflow: hidden;
-    
+
 }
 
-.modalDireccion{
+.modalDireccion {
     display: none;
     position: fixed;
     left: 0;
@@ -1136,33 +1222,38 @@ body.modal-open {
 }
 
 /*Pagina de realizar reserva*/
-.main-container-realizarReserva{
+.main-container-realizarReserva {
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 100px;
 }
-.main-container-realizarReserva h1{
+
+.main-container-realizarReserva h1 {
     font-size: 3rem;
     margin-bottom: 20px;
 }
-.main-container-realizarReserva input{
+
+.main-container-realizarReserva input {
     border-radius: 3px;
 }
-#horasDisponibles{
+
+#horasDisponibles {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 20px;
 }
-#listaHoras{
+
+#listaHoras {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center; 
+    justify-content: center;
     gap: 10px;
-    margin-top: 10px;   
+    margin-top: 10px;
 }
-#listaHoras div{
+
+#listaHoras div {
     display: flex;
     flex-direction: row;
     width: 80px;
@@ -1173,13 +1264,15 @@ body.modal-open {
     align-items: center;
     gap: 5px;
 }
-#finalizarReserva{
+
+#finalizarReserva {
     background-color: rgb(183, 178, 178);
     padding: 10px;
     border: none;
     border-radius: 5px;
 }
-.confirmarObservacionesBtn{
+
+.confirmarObservacionesBtn {
     background-color: var(--second-color);
     padding: 10px;
     border: none;
@@ -1187,6 +1280,7 @@ body.modal-open {
     color: white;
     margin-bottom: 20px;
 }
-.confirmarObservacionesBtn:hover{
+
+.confirmarObservacionesBtn:hover {
     background-color: var(--primary-color);
 }

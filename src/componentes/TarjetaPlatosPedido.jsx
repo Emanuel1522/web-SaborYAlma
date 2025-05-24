@@ -9,11 +9,11 @@ const TarjetaPlatosPedido = ( { plato, nombreBoton, requiereSesion} ) => {
     const { agregarAlCarrito } = useCarrito();
 
     const manejarClick = () => {
-        if (!requiereSesion) {
+        if (requiereSesion) {
+            redireccion("/inicioSesion");
+        } else {
             agregarAlCarrito(plato);
             agregadoExitosamente()
-        } else {
-            redireccion("/inicioSesion");
         }
     };
 
@@ -23,7 +23,7 @@ const TarjetaPlatosPedido = ( { plato, nombreBoton, requiereSesion} ) => {
                 <img src={plato.imagen} alt="" />
                 <h3>{plato.nombre}</h3>
                 <p>{plato.descripcion}</p>
-                <p>{plato.precio}</p>
+                <p>${plato.precio}</p>
             </div>
             <button onClick={manejarClick} id="botonTarjeta" className="boton-reservar">{nombreBoton}</button>
         </div>

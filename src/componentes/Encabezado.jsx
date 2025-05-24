@@ -2,7 +2,6 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { alertaGeneral } from '../helper/funciones'
 import { verificarSesion } from './VerificarSesion';
-import CarritoModal from "./CarritoModal";
 
     const Encabezado = () => {
     let redireccion = useNavigate();
