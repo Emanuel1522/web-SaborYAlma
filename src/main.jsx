@@ -1,11 +1,11 @@
-import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { enrutador } from './router/enrutador.jsx'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import { CarritoCompras } from './componentes/CarritoCompras.jsx'
 import './index.css'
 
 createRoot(document.getElementById('root')).render(
-  <StrictMode>
+  <CarritoCompras >
     <RouterProvider router={createBrowserRouter(enrutador)} />
-  </StrictMode>,
+  </CarritoCompras>,
 )

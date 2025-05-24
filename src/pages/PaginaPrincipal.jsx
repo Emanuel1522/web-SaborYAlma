@@ -1,13 +1,15 @@
 import Encabezado from "../componentes/Encabezado"
+import { verificarSesion } from "../componentes/VerificarSesion"
 import PiePagina from "../componentes/PiePagina"
 import lomo from '../assets/menuRestaurante/LomoSaborYAlma.jpg'
 import pulpo from '../assets/menuRestaurante/PulpoSaborYAlma.jpg'
 import rollitosHesei from '../assets/menuRestaurante/RollitosHeisei.jpg'
 import polloTrudado from '../assets/menuRestaurante/PolloTrufado.jpg'
 import ellipse from '../assets/otros/Ellipse.png'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 function PaginaPrincipal() {
+    let redireccion = useNavigate();
     return (
         <>
             <Encabezado />
@@ -67,7 +69,7 @@ function PaginaPrincipal() {
                         </div>
                     </section>
                     <div className="boton-menu">
-                        <a href="./HTML/menu.html" className="btn">Conoce nuestro menú</a>
+                        <Link to="/productos" className="btn">Conoce nuestro menú</Link>
                     </div>
                 </section>
                 <section id="reseñas-y-horarios">
@@ -96,46 +98,46 @@ function PaginaPrincipal() {
                         </div>
                     </div>
                     <div className="horario-reservas">
-                        <h2>Horario de Reservas</h2>
+                        <h2>Horario de atencion</h2>
                         <div className="tabla-horarios">
                             <table>
                                 <tbody>
                                     <tr>
                                         <td id="dia-semana">Lunes</td>
-                                        <td>12:00 PM A 9:00 PM</td>
+                                        <td>11:00 AM A 11:00 PM</td>
                                     </tr>
                                     <tr>
                                         <td id="dia-semana">Martes</td>
-                                        <td>12:00 PM A 9:00 PM</td>
+                                        <td>11:00 AM A 11:00 PM</td>
                                     </tr>
                                     <tr>
                                         <td id="dia-semana">Miércoles</td>
-                                        <td>12:00 PM A 9:00 PM</td>
+                                        <td>11:00 AM A 11:00 PM</td>
                                     </tr>
                                     <tr>
                                         <td id="dia-semana">Jueves</td>
-                                        <td>12:00 PM A 10:00 PM</td>
+                                        <td>11:00 AM A 11:00 PM</td>
                                     </tr>
                                     <tr>
                                         <td id="dia-semana">Viernes</td>
-                                        <td>12:00 PM A 10:30 PM</td>
+                                        <td>11:00 AM A 11:00 PM</td>
                                     </tr>
                                     <tr>
                                         <td id="dia-semana">Sábado</td>
-                                        <td>1:00 PM A 11:00 PM</td>
+                                        <td>11:00 AM A 11:00 PM</td>
                                     </tr>
                                     <tr>
                                         <td id="dia-semana">Domingo</td>
-                                        <td>11:00 PM A 8:30 PM</td>
+                                        <td>11:00 AM A 11:00 PM</td>
                                     </tr>
                                     <tr>
                                         <td id="dia-semana">Festivo</td>
-                                        <td>12:00 PM A 8:30 PM</td>
+                                        <td>11:00 AM A 11:00 PM</td>
                                     </tr>
                                 </tbody>
                             </table>
-                            <p>Elige el número de personas, fecha y hora disponible para realizar tu reserva</p>
-                            <a href="#reservar" className="boton-reservar">Reservar</a>
+                            <p>Realiza el pedido y te llevamos tu comida hasta la puerta de tu casa!!!</p>
+                            <button onClick={()=> verificarSesion("/realizarPedido", redireccion)} className="boton-reservar">Realizar pedido</button>
                         </div>
                     </div>
                 </section>

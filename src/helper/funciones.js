@@ -20,6 +20,21 @@ export function alertaRedireccion(redireccion, mensaje, ruta) {
   });
 }
 
+export function agregadoExitosamente(){
+  let timerInterval;
+  Swal.fire({
+    title: "Agregando producto al carrito",
+    timer: 1000,
+    didOpen: () => {
+      Swal.showLoading();
+      const timer = Swal.getPopup().querySelector("b");
+      timerInterval = setInterval(() => {
+        timer.textContent = `${Swal.getTimerLeft()}`;
+      }, 100);
+    }
+  });
+}
+
 export function alertaError() {
   Swal.fire({
     icon: "error",

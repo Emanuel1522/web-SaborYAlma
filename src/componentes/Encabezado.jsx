@@ -1,23 +1,16 @@
 import { Link, useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { alertaGeneral } from '../helper/funciones'
+import { verificarSesion } from './VerificarSesion';
+import CarritoModal from "./CarritoModal";
 
-const Encabezado = () => {
+    const Encabezado = () => {
     let redireccion = useNavigate();
     const [tokenActivo, setTokenActivo] = useState(false);
 
     useEffect(() => {
         setTokenActivo(!!localStorage.getItem("token"));
     }, []);
-
-    function verificarSesion(vista) {
-        let tokenActivo = localStorage.getItem("token");
-        if(tokenActivo){
-            redireccion(vista);
-        } else {
-            alertaGeneral(redireccion, "Por favor inicie sesion", "/inicioSesion")
-        }
-    }
 
     function cerrarSesion() {
         localStorage.removeItem("token");
@@ -40,7 +33,13 @@ const Encabezado = () => {
                     <ul>
                         <li><Link to="/" className='linkNav'>Inicio</Link></li>
                         <li><Link to="/quienesSomos" className='linkNav'>¿Quienes somos?</Link></li>
-                        <li><li onClick={() => verificarSesion("/realizarPedido")} className='linkNav'>RealizarPedido</li></li>
+                        {!tokenActivo && (
+                            <>
+                            <li><Link to="/productos" className='linkNav'>Productos</Link></li>
+                            </>
+                        )}
+                        
+                        <li><li onClick={() => verificarSesion("/realizarPedido", redireccion)} className='linkNav'>RealizarPedido</li></li>
                         
                         {!tokenActivo && (
                             <>
@@ -52,7 +51,6 @@ const Encabezado = () => {
                         {tokenActivo && (
                             <li><li onClick={cerrarSesion} className='linkNav'>Cerrar sesión</li></li>
                         )}
-                        
                     </ul>
                 </div>
             </nav>
@@ -62,8 +60,3 @@ const Encabezado = () => {
 
 export default Encabezado;
 
-
-/*
-<li><Link to="/inicioSesion" className='linkNav' id='iniciar-sesion-boton'>Iniciar sesion</Link></li>
-<li><Link to="/crearCuenta" className='linkNav' id='crear-cuenta-boton'>Crear cuenta</Link></li>
-*/

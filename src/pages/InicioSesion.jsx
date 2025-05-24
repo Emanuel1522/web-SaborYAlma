@@ -3,12 +3,16 @@ import PieDePagina from "../componentes/PiePagina";
 import { usuarios } from "../services/database.js"
 import { alertaRedireccion, alertaError, generarToken } from "../helper/funciones.js";
 import { Link, useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const InicioSesion = () => {
     let redireccion = useNavigate();
     const [correo, setCorreo] = useState("")
     const [contraseña, setContraseña] = useState("")
+
+    useEffect(() => {
+            window.scrollTo(0, 0);
+    }, []);
 
     function buscarUsuario() {
         let usuariosLocales = JSON.parse(localStorage.getItem("usuarios")) || [];

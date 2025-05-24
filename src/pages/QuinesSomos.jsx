@@ -1,8 +1,14 @@
 import Encabezado from "../componentes/Encabezado"
 import PiePagina from "../componentes/PiePagina"
 import imgRelleno from '../assets/otros/imagen-relleno-quienes-somos.jpg'
+import { useEffect } from "react";
 
 const QuienesSomos = () => {
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
     return (
         <>
         <Encabezado />
