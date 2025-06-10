@@ -15,7 +15,7 @@ const QuienesSomos = () => {
             <main>
                 <section>
                     <div className="imagen-quienes-somos">
-                        <img className="logo-largo" src="/public/logos/img2801.png" alt="" />
+                        <img className="logo-largo" src="/logos/img2801.png" alt="" />
                     </div>
                 </section>
                 <section id="nuestra-historia">
@@ -30,7 +30,7 @@ const QuienesSomos = () => {
                     </div>
                     <div className="historia-parrafo2">
                         <div className="historia-parrafo2-div">
-                            <img src="/public/logos/img2796.png" alt="Logo corto verde" />
+                            <img src="/logos/img2796.png" alt="Logo corto verde" />
                             <p>Con el tiempo, el chef viajó por el mundo, aprendiendo de diferentes culturas y perfeccionando su
                                 arte culinario. Pero en cada rincón del planeta, sin importar cuán sofisticada o exótica fuera la
                                 cocina, siempre volvía a esa sencilla verdad que había aprendido en su hogar: la comida tiene el
@@ -45,7 +45,7 @@ const QuienesSomos = () => {
                             ofrecer a los comensales una experiencia sensorial única.</p>
                     </div>
                     <div className="historia-logo">
-                        <img src="/public/logos/img2801.png" alt="Logo Largo" />
+                        <img src="/logos/img2801.png" alt="Logo Largo" />
                     </div>
                 </section>
                 <div className="contenedorImagenRelleno">

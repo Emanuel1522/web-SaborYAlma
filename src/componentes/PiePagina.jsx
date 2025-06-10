@@ -11,10 +11,10 @@ const PieDePagina = () => {
                 </div>
                 <div className="logos-footer">
                     <div className="logo-largo-footer">
-                        <img src="/public/logos/img2802.png" alt="" />
+                        <img src="/logos/img2802.png" alt="" />
                     </div>
                     <div className="logo-corto-footer">
-                        <img src="/public/logos/img2795.png" alt="Logo Corto" />
+                        <img src="/logos/img2795.png" alt="Logo Corto" />
                     </div>
                 </div>
             </div>

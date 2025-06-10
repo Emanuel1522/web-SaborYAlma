@@ -12,7 +12,7 @@ function PaginaPrincipal() {
 
             <main>
                 <section className="main-section-home">
-                    <img src="/public/logos/img2802.png" alt="Logo sabor y alma en blanco y largo" />
+                    <img src="/logos/img2802.png" alt="Logo sabor y alma en blanco y largo" />
                 </section>
                 <section className="main-section">
                     <div id="main-section-left">
@@ -39,7 +39,7 @@ function PaginaPrincipal() {
                         </div>
                     </div>
                     <div id="div-2">
-                        <img src="/public/logos/img2797.png" alt="logo corto en rojo" />
+                        <img src="/logos/img2797.png" alt="logo corto en rojo" />
                     </div>
                 </section>
                 <section id="platos-destacados">
@@ -138,7 +138,7 @@ function PaginaPrincipal() {
                     </div>
                 </section>
                 <section className="logo-relleno" id="logo-relleno-home">
-                    <img src="/public/logos/img2795.png" alt="Logo corto en blanco" />
+                    <img src="/logos/img2795.png" alt="Logo corto en blanco" />
                 </section>
             </main>
 
