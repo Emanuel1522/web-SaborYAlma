@@ -1,10 +1,6 @@
 import Encabezado from "../componentes/Encabezado"
 import { verificarSesion } from "../componentes/VerificarSesion"
 import PiePagina from "../componentes/PiePagina"
-import lomo from '../assets/menuRestaurante/LomoSaborYAlma.jpg'
-import pulpo from '../assets/menuRestaurante/PulpoSaborYAlma.jpg'
-import rollitosHesei from '../assets/menuRestaurante/RollitosHeisei.jpg'
-import polloTrudado from '../assets/menuRestaurante/PolloTrufado.jpg'
 import ellipse from '../assets/otros/Ellipse.png'
 import { Link, useNavigate } from 'react-router-dom';
 
@@ -51,19 +47,19 @@ function PaginaPrincipal() {
                         <h2>Nuestros platos más destacados</h2>
                         <div className="flex-container">
                             <div className="plato">
-                                <img className="plato-img1" src={lomo} alt="" />
+                                <img className="plato-img1" src="/assets/menuRestaurante/LomoSaborYAlma.jpg" alt="" />
                                 <p>Lomo Sabor Y Alma</p>
                             </div>
                             <div className="plato">
-                                <img className="plato-img1" src={pulpo} alt="" />
+                                <img className="plato-img1" src="/assets/menuRestaurante/PulpoSaborYAlma.jpg" alt="" />
                                 <p>Pulpo Sabor Y Alma</p>
                             </div>
                             <div className="plato">
-                                <img className="plato-img1" src={rollitosHesei} alt="" />
+                                <img className="plato-img1" src="/assets/menuRestaurante/RollitosHeisei.jpg" alt="" />
                                 <p>Rollitos Heisei</p>
                             </div>
                             <div className="plato">
-                                <img className="plato-img1" src={polloTrudado} alt="" />
+                                <img className="plato-img1" src="/assets/menuRestaurante/PolloTrufado.jpg" alt="" />
                                 <p>Pollo trufado</p>
                             </div>
                         </div>

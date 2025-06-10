@@ -1,23 +1,30 @@
 import Encabezado from "../componentes/Encabezado";
 import PieDePagina from "../componentes/PiePagina";
-import { usuarios } from "../services/database.js"
 import { alertaRedireccion, alertaError, generarToken } from "../helper/funciones.js";
 import { Link, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
+
+let apiUsuarios = "https://dbsaboryalma.onrender.com/usuarios"
 
 const InicioSesion = () => {
     let redireccion = useNavigate();
     const [correo, setCorreo] = useState("")
     const [contraseña, setContraseña] = useState("")
+    const [usuariosApi, setUsuariosApi] = useState([]);
 
     useEffect(() => {
-            window.scrollTo(0, 0);
+        window.scrollTo(0, 0);
+        fetch(apiUsuarios)
+            .then(response => response.json())
+            .then(data => setUsuariosApi(data))
+            .catch(error => console.error("Error al traer usuarios:", error));
     }, []);
 
     function buscarUsuario() {
-        let usuariosLocales = JSON.parse(localStorage.getItem("usuarios")) || [];
-        let todosLosUsuarios = [...usuarios, ...usuariosLocales];
-        return todosLosUsuarios.find((e) => e.correo.toLowerCase() === correo.toLowerCase() && e.contraseña === contraseña)
+        return usuariosApi.find((usuario) => 
+            usuario.correo.toLowerCase() === correo.toLowerCase() && 
+            usuario.contraseña === contraseña
+        );
     }
 
     function redirigirUsuario() {
