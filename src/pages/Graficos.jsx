@@ -23,11 +23,14 @@ const Graficos = () => {
         <div>
           <div className="menu-container">
             <div className="listaPlatos">
-              {graficos.map((grafico) => (
                 <div className="itemGraficos">
-                    <img src={grafico.imagen} alt="" />
+                    <img src={"/graficos/uno.png"} alt="" />
                 </div>
-              ))}
+            </div>
+            <div className="listaPlatos">
+                <div className="itemGraficos">
+                    <img src={"/graficos/dos.png"} alt="" />
+                </div>
             </div>
           </div>
         </div>
