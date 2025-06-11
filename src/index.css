@@ -15,6 +15,7 @@
 
 body {
     margin: 0;
+    height: 100%;
     font-family: Arial, sans-serif;
 }
 
@@ -447,11 +448,41 @@ footer p {
 }
 
 
-.item {
+.tituloGraficos {
+    text-align: center;
+    margin: 50px;
+}
+
+.itemGraficos {
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
     border-radius: 8px;
     margin: 10px;
     padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 570px;
+    transition: transform 0.3s ease;
+}
+
+.itemGraficos img {
+    width: 100%;
+    border-radius: 8px;
+    height: 400px;
+    object-fit: cover;
+}
+
+.itemGraficos:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 0px 10px rgb(255, 0, 0);
+}
+
+.item {
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+    margin: 10px;
+    padding: 15px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;

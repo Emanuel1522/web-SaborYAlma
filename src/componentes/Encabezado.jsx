@@ -32,6 +32,7 @@ import { verificarSesion } from './VerificarSesion';
                     <ul>
                         <li><Link to="/" className='linkNav'>Inicio</Link></li>
                         <li><Link to="/quienesSomos" className='linkNav'>¿Quienes somos?</Link></li>
+                        <li><Link to="/graficos" className='linkNav'>Graficos</Link></li>
                         {!tokenActivo && (
                             <>
                             <li><Link to="/productos" className='linkNav'>Productos</Link></li>

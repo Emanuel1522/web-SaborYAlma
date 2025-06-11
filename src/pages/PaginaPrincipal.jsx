@@ -9,7 +9,6 @@ function PaginaPrincipal() {
     return (
         <>
             <Encabezado />
-
             <main>
                 <section className="main-section-home">
                     <img src="/logos/img2802.png" alt="Logo sabor y alma en blanco y largo" />

@@ -5,6 +5,7 @@ import RealizarPedido from '../pages/RealizarPedido'
 import RutaProtegida from "../componentes/RutaProtegida";
 import InicioSesion from '../pages/InicioSesion'
 import CrearCuenta from '../pages/CrearCuenta'
+import Graficos from '../pages/Graficos';
 
 export let enrutador = [
     {
@@ -31,5 +32,9 @@ export let enrutador = [
         path: "crearCuenta",
         element: <CrearCuenta />,
     },
+    {
+      path: "/graficos",
+      element: <Graficos />
+    }
 ];
   
