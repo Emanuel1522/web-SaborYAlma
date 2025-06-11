@@ -440,7 +440,7 @@ footer p {
 
 .listaPlatos {
     display: flex;
-    justify-content: left;
+    justify-content: center;
     flex-wrap: wrap;
     gap: 30px;
     padding: 20px;
@@ -462,15 +462,12 @@ footer p {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    width: 570px;
     transition: transform 0.3s ease;
 }
 
 .itemGraficos img {
-    width: 100%;
     border-radius: 8px;
-    height: 400px;
-    object-fit: cover;
+    height: 500px;
 }
 
 .itemGraficos:hover {
