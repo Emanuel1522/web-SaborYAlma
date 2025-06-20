@@ -4,7 +4,7 @@ import { alertaRedireccion, alertaError, generarToken } from "../helper/funcione
 import { Link, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 
-let apiUsuarios = "http://localhost:8080/clientes"
+let apiUsuarios = "https://dbsaboryalma.onrender.com/usuarios"
 
 const InicioSesion = () => {
     let redireccion = useNavigate();

@@ -5,7 +5,7 @@ import Encabezado from "../componentes/Encabezado";
 import PieDePagina from "../componentes/PiePagina";
 import { generarToken } from "../helper/funciones";
 
-const apiUsuarios = "http://localhost:8080/clientes";
+const apiUsuarios = "https://dbsaboryalma.onrender.com/usuarios";
 
 const CrearCuenta = () => {
     let redireccion = useNavigate();
