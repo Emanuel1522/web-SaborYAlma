@@ -22,7 +22,7 @@ import { verificarSesion } from './VerificarSesion';
             <nav>
                 <div className="nav-logo">
                     <Link to="/">
-                        <img src="/logos/img2795.png" alt="Logo Corto en blanco" />
+                        <img src="/logos/img2795.PNG" alt="Logo Corto en blanco" />
                     </Link>
                 </div>
                 <div className="menu-icon">

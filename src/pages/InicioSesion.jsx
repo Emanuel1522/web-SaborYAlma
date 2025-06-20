@@ -44,7 +44,7 @@ const InicioSesion = () => {
         <main id="main-container-iniciarSesion">
             <div className="flex-iniciarSesion">
                 <section className="flex-iniciarSesion_left">
-                    <img src="/public/logos/img2803.png" alt="logo negro largo" className="logo-negro" />
+                    <img src="/public/logos/img2803.PNG" alt="logo negro largo" className="logo-negro" />
                     <form action="">
                         <input onChange={(e)=> setCorreo(e.target.value)} 
                         type="text" 
