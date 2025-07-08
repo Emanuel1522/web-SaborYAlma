@@ -1,44 +1,36 @@
-/* 
-import tostadasNikkei from '../assets/menuRestaurante/TostadasNikkei.jpeg';
-import RollitosHeisei from '../assets/menuRestaurante/RollitosHeisei.jpg';
-import TatakiDeAtun from '../assets/menuRestaurante/TatakiDeAtun.jpg';
-import TornadosDeSalmon from '../assets/menuRestaurante/TornadosDeSalmon.jpg';
-import TartarMixto from '../assets/menuRestaurante/TartarMixto.jpg';
-import WontonesDeSalmon from '../assets/menuRestaurante/WontonesDeSalmon.jpg';
-import PorkBao from '../assets/menuRestaurante/PorkBao.jpg';
+import tostadasNikkei from '/assets/menuRestaurante/tostadasNikkei.jpg';
+import RollitosHeisei from '/assets/menuRestaurante/RollitosHeisei.jpg';
+import TatakiDeAtun from '/assets/menuRestaurante/TatakiDeAtun.jpg';
+import TornadosDeSalmon from '/assets/menuRestaurante/TornadosDeSalmon.jpg';
+import TartarMixto from '/assets/menuRestaurante/TartarMixto.jpg';
+import WontonesDeSalmon from '/assets/menuRestaurante/WontonesDeSalmon.jpg';
+import PorkBao from '/assets/menuRestaurante/PorkBao.jpg';
 
-import LomoSaborYAlma from '../assets/menuRestaurante/LomoSaborYAlma.jpg';
-import LomoSelvaEnRissotoDeAjíAmarillo from '../assets/menuRestaurante/LomoSelvaEnRissotoDeAjíAmarillo.jpg';
-import PolloTrufado from '../assets/menuRestaurante/PolloTrufado.jpg';
-import SalmonCremoso from '../assets/menuRestaurante/SalmonCremoso.jpg';
-import ArrozPeruano from '../assets/menuRestaurante/ArrozPeruano.jpeg';
-import PescadoTupac from '../assets/menuRestaurante/PescadoTupac.jpg';
-import TallarinesAlEstiloOriental from '../assets/menuRestaurante/TallarinesAlEstiloOriental.jpg';
-import StriploinCertifiedAngusBeef from '../assets/menuRestaurante/StriploinCertifiedAngusBeef.jpg';
-import PicanhaCertifiedAngus from '../assets/menuRestaurante/PicanhaCertifiedAngus.jpg';
-import PulpoSaborYAlma from '../assets/menuRestaurante/PulpoSaborYAlma.jpg';
+import LomoSaborYAlma from '/assets/menuRestaurante/LomoSaborYAlma.jpg';
+import LomoSelvaEnRissotoDeAjíAmarillo from '/assets/menuRestaurante/LomoSelvaEnRissotoDeAjíAmarillo.jpg';
+import PolloTrufado from '/assets/menuRestaurante/PolloTrufado.jpg';
+import SalmonCremoso from '/assets/menuRestaurante/SalmonCremoso.jpg';
+import ArrozPeruano from '/assets/menuRestaurante/ArrozPeruano.jpg';
+import PescadoTupac from '/assets/menuRestaurante/PescadoTupac.jpg';
+import TallarinesAlEstiloOriental from '/assets/menuRestaurante/TallarinesAlEstiloOriental.jpg';
+import StriploinCertifiedAngusBeef from '/assets/menuRestaurante/StriploinCertifiedAngusBeef.jpg';
+import PicanhaCertifiedAngus from '/assets/menuRestaurante/PicanhaCertifiedAngus.jpg';
+import PulpoSaborYAlma from '/assets/menuRestaurante/PulpoSaborYAlma.jpg';
 
-import CrumbleDeCaramelo from '../assets/menuRestaurante/CrumbleDeCaramelo.jpg';
-import VolcanDeArequipe from '../assets/menuRestaurante/VolcanDeArequipe.jpg';
-import VolcanDeChocolate from '../assets/menuRestaurante/PulpoSaborYAlma.jpg';
-import TorreDeCaramelo from '../assets/menuRestaurante/TorreDeCaramelo.jpg';
-import CheescakeFrutosRojos from '../assets/menuRestaurante/CheescakeFrutosRojos.jpg';
+import CrumbleDeCaramelo from '/assets/menuRestaurante/CrumbleDeCaramelo.jpg';
+import VolcanDeArequipe from '/assets/menuRestaurante/VolcanDeArequipe.jpg';
+import VolcanDeChocolate from '/assets/menuRestaurante/PulpoSaborYAlma.jpg';
+import TorreDeCaramelo from '/assets/menuRestaurante/TorreDeCaramelo.jpg';
+import CheescakeFrutosRojos from '/assets/menuRestaurante/CheescakeFrutosRojos.jpg';
 
 export const usuarios = [
     {
         id:1,
-        nombre:"Emanuel",
-        apellido:"Rojas",
-        correo:"emanuel@gmail.com",
-        contraseña:"emanuel",
-    },
-    {
-        id:2,
-        nombre:"Jeanpier",
-        apellido:"Moreno",
-        correo:"jeanpier@gmail.com",
-        contraseña:"jeanpier",
-    },
+        nombre:"admin",
+        apellido:"admin",
+        correo:"admin",
+        contraseña:"admin",
+    }
 ]
 
 export const entradas = [
@@ -205,4 +197,3 @@ export const postres = [
         precio: 13000
     }
 ];
-*/

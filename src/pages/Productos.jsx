@@ -1,30 +1,9 @@
 import TarjetaPlatosPedido from "../componentes/TarjetaPlatosPedido";
 import Encabezado from "../componentes/Encabezado";
 import PieDePagina from "../componentes/PiePagina";
-import { useEffect, useState } from "react";
+import { entradas, platosFuertes, postres } from "../services/database";
 
 const Productos = () => {
-    const [entradas, setEntradas] = useState([]);
-    const [platosFuertes, setPlatosFuertes] = useState([]);
-    const [postres, setPostres] = useState([]);
-
-    useEffect(() => {
-        window.scrollTo(0, 0);
-        fetch("https://dbsaboryalma.onrender.com/entradas")
-            .then(res => res.json())
-            .then(data => setEntradas(data))
-            .catch(err => console.error("Error cargando entradas:", err));
-
-        fetch("https://dbsaboryalma.onrender.com/platosFuertes")
-            .then(res => res.json())
-            .then(data => setPlatosFuertes(data))
-            .catch(err => console.error("Error cargando platos fuertes:", err));
-
-        fetch("https://dbsaboryalma.onrender.com/postres")
-            .then(res => res.json())
-            .then(data => setPostres(data))
-            .catch(err => console.error("Error cargando postres:", err));
-    }, []);
 
     return (
         <>

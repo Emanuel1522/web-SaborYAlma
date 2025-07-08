@@ -3,6 +3,7 @@ import PieDePagina from "../componentes/PiePagina";
 import { alertaRedireccion, alertaError, generarToken } from "../helper/funciones.js";
 import { Link, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { usuarios } from "../services/database.js";
 
 let apiUsuarios = "https://dbsaboryalma.onrender.com/usuarios"
 
@@ -21,10 +22,13 @@ const InicioSesion = () => {
     }, []);
 
     function buscarUsuario() {
-        return usuariosApi.find((usuario) => 
-            usuario.correo.toLowerCase() === correo.toLowerCase() && 
-            usuario.contraseña === contraseña
-        );
+        let usuarioEncontrado = usuarios.find((usuario) => 
+            usuario.correo.toLowerCase() === correo.toLowerCase() && usuario.contraseña === contraseña);
+
+        let usuarioApiEncontrado = usuariosApi.find((usuario) => 
+            usuario.correo.toLowerCase() === correo.toLowerCase() && usuario.contraseña === contraseña);
+
+        return usuarioEncontrado || usuarioApiEncontrado;
     }
 
     function redirigirUsuario() {
