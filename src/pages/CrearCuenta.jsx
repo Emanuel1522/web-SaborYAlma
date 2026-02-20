@@ -68,8 +68,8 @@ const CrearCuenta = () => {
             <Encabezado />
             <main className="auth-container">
                 <div className="auth-flex glass">
-                    <section className="auth-left" style={{ padding: '40px' }}>
-                        <img src="/logos/img2803.PNG" alt="Logo Sabor y Alma" style={{ width: '150px', marginBottom: '20px' }} />
+                    <section className="auth-left">
+                        <img src="/logos/img2803.PNG" alt="Logo Sabor y Alma" style={{ width: '180px', marginBottom: '20px' }} />
                         <h2 className="serif" style={{ marginBottom: '20px' }}>Crea tu Cuenta</h2>
                         <form onSubmit={(e) => {
                             e.preventDefault();
@@ -103,8 +103,8 @@ const CrearCuenta = () => {
                                 value={contraseña}
                                 onChange={(e) => setContraseña(e.target.value)} />
 
-                            <div className="terminos-registro" style={{ marginBottom: '20px' }}>
-                                <input type="checkbox" id="terminos" name="terminos" style={{ width: 'auto', marginBottom: '0', marginRight: '10px' }} />
+                            <div className="terminos-registro" style={{ marginBottom: '20px', display: 'flex', alignItems: 'flex-start' }}>
+                                <input type="checkbox" id="terminos" name="terminos" style={{ width: 'auto', marginTop: '5px', marginRight: '10px' }} />
                                 <label htmlFor="terminos" style={{ fontSize: '0.85rem' }}>
                                     He leído los <span className="subrayado-rojo">términos y condiciones</span> y la <span className="subrayado-rojo">política de privacidad</span>.</label>
                             </div>

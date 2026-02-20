@@ -17,8 +17,8 @@ const Productos = () => {
                             <TarjetaPlatosPedido
                                 key={entrada.id}
                                 plato={entrada}
-                                nombreBoton="Agregar al Carrito"
-                                requiereSesion={false}
+                                nombreBoton="Realizar pedido"
+                                requiereSesion={true}
                             />
                         ))}
                     </div>
@@ -41,8 +41,8 @@ const Productos = () => {
                             <TarjetaPlatosPedido
                                 key={postre.id}
                                 plato={postre}
-                                nombreBoton="Agregar al Carrito"
-                                requiereSesion={false}
+                                nombreBoton="Realizar pedido"
+                                requiereSesion={true}
                             />
                         ))}
                     </div>

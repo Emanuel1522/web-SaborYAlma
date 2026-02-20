@@ -45,35 +45,33 @@ const InicioSesion = () => {
     return (
         <>
             <Encabezado />
-            <main id="main-container-iniciarSesion">
-                <div className="flex-iniciarSesion glass">
-                    <section className="flex-iniciarSesion_left">
-                        <img src="/logos/img2803.PNG" alt="Logo Sabor y Alma" className="logo-negro" style={{ width: '250px', marginBottom: '30px' }} />
+            <main className="auth-container">
+                <div className="auth-flex glass">
+                    <section className="auth-left">
+                        <img src="/logos/img2803.PNG" alt="Logo Sabor y Alma" style={{ width: '200px', marginBottom: '20px' }} />
                         <h2 className="serif">Bienvenido</h2>
                         <form onSubmit={(e) => { e.preventDefault(); redirigirUsuario(); }}>
                             <input onChange={(e) => setCorreo(e.target.value)}
                                 type="email"
                                 placeholder="CORREO ELECTRÓNICO"
-                                required
-                                className="email-inicio" />
+                                required />
 
-                            <div className="contraseña-login-flex">
+                            <div className="contraseña-login-flex" style={{ width: '100%' }}>
                                 <input onChange={(e) => setContraseña(e.target.value)}
                                     type="password"
                                     placeholder="CONTRASEÑA"
-                                    required
-                                    className="contraseña-inicio" />
+                                    required />
                                 <p style={{ fontSize: '0.8rem', textAlign: 'right' }}><a href="#" className="subrayado-rojo">¿Olvidaste tu contraseña?</a></p>
                             </div>
 
-                            <button type="submit" className="btn-premium" style={{ width: '100%' }}> Iniciar Sesion </button>
+                            <button type="submit" className="btn-premium" style={{ width: '100%', marginTop: '20px' }}> Iniciar Sesión </button>
                         </form>
                         <div className="registrate">
                             <p>¿No tienes cuenta?</p>
                             <Link to="/crearCuenta" className='subrayado-verde'> Regístrate aquí </Link>
                         </div>
                     </section>
-                    <div className="flex-iniciarSesion_right"></div>
+                    <div className="auth-right login-bg"></div>
                 </div>
             </main>
             <PieDePagina />

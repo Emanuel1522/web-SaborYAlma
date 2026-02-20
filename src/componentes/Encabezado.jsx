@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { alertaGeneral } from '../helper/funciones'
 import { verificarSesion } from './VerificarSesion';
 
-    const Encabezado = () => {
+const Encabezado = () => {
     let redireccion = useNavigate();
     const [tokenActivo, setTokenActivo] = useState(false);
     const [menuAbierto, setMenuAbierto] = useState(false);
@@ -28,9 +28,11 @@ import { verificarSesion } from './VerificarSesion';
                         <img src="/logos/img2795.PNG" alt="Logo Corto" />
                     </Link>
                 </div>
+
                 <div className="menu-icon" onClick={toggleMenu}>
                     {menuAbierto ? '✕' : '☰'}
                 </div>
+
                 <div className={`nav-menu ${menuAbierto ? 'active' : ''}`}>
                     <ul>
                         <li><Link to="/" className='linkNav' onClick={() => setMenuAbierto(false)}>Inicio</Link></li>
@@ -38,7 +40,7 @@ import { verificarSesion } from './VerificarSesion';
                         <li><Link to="/graficos" className='linkNav' onClick={() => setMenuAbierto(false)}>Gráficos</Link></li>
                         <li><Link to="/productos" className='linkNav' onClick={() => setMenuAbierto(false)}>Menú</Link></li>
                         <li><span onClick={() => { verificarSesion("/realizarPedido", redireccion); setMenuAbierto(false); }} className='linkNav'>Pedidos</span></li>
-                        
+
                         {!tokenActivo ? (
                             <>
                                 <li><Link to="/inicioSesion" className='linkNav' id='iniciar-sesion-boton' onClick={() => setMenuAbierto(false)}>Iniciar Sesión</Link></li>

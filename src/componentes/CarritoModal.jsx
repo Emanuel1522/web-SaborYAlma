@@ -46,24 +46,30 @@ const CarritoModal = ({ mostrar, cerrar }) => {
         <div className="modal-carrito">
             <div className="contenido-modal">
                 <h2>Carrito de Compras</h2>
-                {carrito.length === 0 ? (
-                    <p>No hay productos en el carrito.</p>
-                ) : (
-                    carrito.map(item => (
-                        <div key={item.id} className="item-carrito">
-                            <span className="nombre-item">{item.nombre}</span>
-                            <span className="precio-item">${item.precio}</span>
-                            <div className="cantidad-controles">
-                                <button onClick={() => disminuirCantidad(item.id)}>-</button>
-                                <span>{item.cantidad}</span>
-                                <button onClick={() => aumentarCantidad(item.id)}>+</button>
+                <div className="lista-items-carrito">
+                    {carrito.length === 0 ? (
+                        <p>No hay productos en el carrito.</p>
+                    ) : (
+                        carrito.map(item => (
+                            <div key={item.id} className="item-carrito">
+                                <img src={item.imagen} alt={item.nombre} className="thumb-carrito" />
+                                <div className="info-item-carrito">
+                                    <span className="nombre-item">{item.nombre}</span>
+                                    <span className="precio-item">${item.precio}</span>
+                                </div>
+                                <div className="cantidad-controles">
+                                    <button onClick={() => disminuirCantidad(item.id)}>-</button>
+                                    <span>{item.cantidad}</span>
+                                    <button onClick={() => aumentarCantidad(item.id)}>+</button>
+                                </div>
+                                <button className="eliminar-item" onClick={() => eliminarDelCarrito(item.id)}>❌</button>
                             </div>
-                            <button className="eliminar-item" onClick={() => eliminarDelCarrito(item.id)}>❌</button>
-                        </div>
-                    ))
-                )}
+                        ))
+                    )}
+                </div>
                 {mostrandoFormulario && (
                     <div className="formulario-pago">
+                        <hr />
                         <h3>Detalles de Entrega</h3>
                         <input value={direccion} type="text" placeholder="Dirección" required className="input-pago" onChange={(e) => setDireccion(e.target.value.trim())} />
                         <input value={telefono} type="text" placeholder="Teléfono" required className="input-pago" onChange={(e) => setTelefono(e.target.value.trim())} />

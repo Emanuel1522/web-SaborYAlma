@@ -14,14 +14,11 @@ const RealizarPedido = () => {
         <>
             <Encabezado />
             <CarritoModal mostrar={mostrarCarrito} cerrar={() => setMostrarCarrito(false)} />
-            <div>
-                <h1 className="menu-title">Lista de Platos</h1>
-                <button className="botonCarrito" onClick={() => setMostrarCarrito(true)}>
-                    🛒 {carrito.length > 0 && <span className="contador-carrito">{carrito.length}</span>}
-                </button>
-                
+            <main className="container" style={{ paddingTop: 'var(--header-height)' }}>
+                <h1 className="menu-title">Realizar Pedido</h1>
+
                 <div className="menu-container">
-                    <h2>Entradas / Starters</h2>
+                    <h2 className="serif">Entradas / Starters</h2>
                     <div className='listaPlatos'>
                         {entradas.map((entrada) => (
                             <TarjetaPlatosPedido
@@ -32,7 +29,7 @@ const RealizarPedido = () => {
                             />
                         ))}
                     </div>
-                    <h2>Platos Fuertes / Main Course</h2>
+                    <h2 className="serif">Platos Fuertes / Main Course</h2>
                     <div className='listaPlatos'>
                         {platosFuertes.map((platoFuerte) => (
                             <TarjetaPlatosPedido
@@ -43,7 +40,7 @@ const RealizarPedido = () => {
                             />
                         ))}
                     </div>
-                    <h2>Postres / Desserts</h2>
+                    <h2 className="serif">Postres / Desserts</h2>
                     <div className='listaPlatos'>
                         {postres.map((postre) => (
                             <TarjetaPlatosPedido
@@ -55,9 +52,10 @@ const RealizarPedido = () => {
                         ))}
                     </div>
                 </div>
-                <aside id="carrito">
-                </aside>
-            </div>
+            </main>
+            <button className="botonCarrito" onClick={() => setMostrarCarrito(true)}>
+                🛒 {carrito.length > 0 && <span className="contador-carrito">{carrito.length}</span>}
+            </button>
             <PieDePagina />
         </>
     )

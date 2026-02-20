@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
-import { useCarrito } from '../componentes/CarritoCompras.jsx';
+import { useCarrito } from "./CarritoCompras.jsx";
 import { agregadoExitosamente } from "../helper/funciones.js";
+import { verificarSesion } from "./VerificarSesion.jsx";
 
 const TarjetaPlatosPedido = ({ plato, nombreBoton, requiereSesion }) => {
 
@@ -10,7 +11,7 @@ const TarjetaPlatosPedido = ({ plato, nombreBoton, requiereSesion }) => {
 
     const manejarClick = () => {
         if (requiereSesion) {
-            redireccion("/inicioSesion");
+            verificarSesion("/realizarPedido", redireccion);
         } else {
             agregarAlCarrito(plato);
             agregadoExitosamente()

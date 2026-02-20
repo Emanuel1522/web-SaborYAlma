@@ -19,17 +19,17 @@ import PulpoSaborYAlma from '/assets/menuRestaurante/PulpoSaborYAlma.jpg';
 
 import CrumbleDeCaramelo from '/assets/menuRestaurante/CrumbleDeCaramelo.jpg';
 import VolcanDeArequipe from '/assets/menuRestaurante/VolcanDeArequipe.jpg';
-import VolcanDeChocolate from '/assets/menuRestaurante/PulpoSaborYAlma.jpg';
+import VolcanDeChocolate from '/assets/menuRestaurante/VolcanDeChocolate.jpg';
 import TorreDeCaramelo from '/assets/menuRestaurante/TorreDeCaramelo.jpg';
 import CheescakeFrutosRojos from '/assets/menuRestaurante/CheescakeFrutosRojos.jpg';
 
 export const usuarios = [
     {
-        id:1,
-        nombre:"admin",
-        apellido:"admin",
-        correo:"admin",
-        contraseña:"admin",
+        id: 1,
+        nombre: "admin",
+        apellido: "admin",
+        correo: "admin",
+        contraseña: "admin",
     }
 ]
 

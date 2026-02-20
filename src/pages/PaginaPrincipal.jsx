@@ -103,8 +103,8 @@ function PaginaPrincipal() {
                         </div>
                     </div>
                 </section>
-                <section className="logo-relleno" id="logo-relleno-home">
-                    <img src="/logos/img2795.PNG" alt="Logo corto en blanco" />
+                <section className="logo-relleno container" id="logo-relleno-home" style={{ padding: '100px 20px', textAlign: 'center' }}>
+                    <img src="/logos/img2795.PNG" alt="Logo corto en blanco" style={{ maxWidth: '120px', margin: '0 auto' }} />
                 </section>
             </main>
 
