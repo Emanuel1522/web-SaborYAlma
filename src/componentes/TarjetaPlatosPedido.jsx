@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { useCarrito } from '../componentes/CarritoCompras.jsx';
 import { agregadoExitosamente } from "../helper/funciones.js";
 
-const TarjetaPlatosPedido = ( { plato, nombreBoton, requiereSesion} ) => {
+const TarjetaPlatosPedido = ({ plato, nombreBoton, requiereSesion }) => {
 
     const redireccion = useNavigate();
 
@@ -17,15 +17,15 @@ const TarjetaPlatosPedido = ( { plato, nombreBoton, requiereSesion} ) => {
         }
     };
 
-    return(
+    return (
         <div className="item">
+            <img src={plato.imagen} alt={plato.nombre} />
             <div className="contenido">
-                <img src={plato.imagen} alt="" />
                 <h3>{plato.nombre}</h3>
                 <p>{plato.descripcion}</p>
-                <p>${plato.precio}</p>
+                <p className="serif" style={{ fontSize: '1.5rem', color: 'var(--accent-secondary)' }}>${plato.precio}</p>
+                <button onClick={manejarClick} className="btn-premium" style={{ width: '100%', marginTop: 'auto' }}>{nombreBoton}</button>
             </div>
-            <button onClick={manejarClick} id="botonTarjeta" className="boton-reservar">{nombreBoton}</button>
         </div>
     )
 }

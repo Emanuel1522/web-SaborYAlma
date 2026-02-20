@@ -22,10 +22,10 @@ const InicioSesion = () => {
     }, []);
 
     function buscarUsuario() {
-        let usuarioEncontrado = usuarios.find((usuario) => 
+        let usuarioEncontrado = usuarios.find((usuario) =>
             usuario.correo.toLowerCase() === correo.toLowerCase() && usuario.contraseña === contraseña);
 
-        let usuarioApiEncontrado = usuariosApi.find((usuario) => 
+        let usuarioApiEncontrado = usuariosApi.find((usuario) =>
             usuario.correo.toLowerCase() === correo.toLowerCase() && usuario.contraseña === contraseña);
 
         return usuarioEncontrado || usuarioApiEncontrado;
@@ -44,44 +44,39 @@ const InicioSesion = () => {
 
     return (
         <>
-        <Encabezado />
-        <main id="main-container-iniciarSesion">
-            <div className="flex-iniciarSesion">
-                <section className="flex-iniciarSesion_left">
-                    <img src="/logos/img2803.PNG" alt="logo negro largo" className="logo-negro" />
-                    <form action="">
-                        <input onChange={(e)=> setCorreo(e.target.value)} 
-                        type="text" 
-                        placeholder="CORREO" 
-                        required
-                        id="loginUsuario"
-                        className="email-inicio" />
-                        <div className="contraseña-login-flex">
-                            <input onChange={(e)=> setContraseña(e.target.value)} 
-                            type="password" 
-                            placeholder="CONTRASEÑA" 
-                            required
-                            id="loginContraseña" 
-                            className="contraseña-inicio"/>
-                            <p>¿Olvidaste tu Contraseña? <a href="#"> <span className="subray-rojo"> Click aquí</span></a></p>
+            <Encabezado />
+            <main id="main-container-iniciarSesion">
+                <div className="flex-iniciarSesion glass">
+                    <section className="flex-iniciarSesion_left">
+                        <img src="/logos/img2803.PNG" alt="Logo Sabor y Alma" className="logo-negro" style={{ width: '250px', marginBottom: '30px' }} />
+                        <h2 className="serif">Bienvenido</h2>
+                        <form onSubmit={(e) => { e.preventDefault(); redirigirUsuario(); }}>
+                            <input onChange={(e) => setCorreo(e.target.value)}
+                                type="email"
+                                placeholder="CORREO ELECTRÓNICO"
+                                required
+                                className="email-inicio" />
+
+                            <div className="contraseña-login-flex">
+                                <input onChange={(e) => setContraseña(e.target.value)}
+                                    type="password"
+                                    placeholder="CONTRASEÑA"
+                                    required
+                                    className="contraseña-inicio" />
+                                <p style={{ fontSize: '0.8rem', textAlign: 'right' }}><a href="#" className="subrayado-rojo">¿Olvidaste tu contraseña?</a></p>
+                            </div>
+
+                            <button type="submit" className="btn-premium" style={{ width: '100%' }}> Iniciar Sesion </button>
+                        </form>
+                        <div className="registrate">
+                            <p>¿No tienes cuenta?</p>
+                            <Link to="/crearCuenta" className='subrayado-verde'> Regístrate aquí </Link>
                         </div>
-                        <button 
-                        type="submit"
-                        id="iniciarSesionBtn"
-                        className="btn-inicio"
-                        onClick={(e) => {
-                            e.preventDefault();
-                            redirigirUsuario();}}> Iniciar sesion </button>
-                    </form>
-                    <div className="registrate">
-                        <p>¿No has creado tu cuenta aun?</p>
-                        <Link to="/crearCuenta" className='subrayar-verde'> Registrate aqui </Link>
-                    </div>
-                </section>
-                <div className="flex-iniciarSesion_right"></div>
-            </div>
-        </main>
-        <PieDePagina />
+                    </section>
+                    <div className="flex-iniciarSesion_right"></div>
+                </div>
+            </main>
+            <PieDePagina />
         </>
     )
 }

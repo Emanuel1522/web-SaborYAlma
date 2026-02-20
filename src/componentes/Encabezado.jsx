@@ -6,6 +6,7 @@ import { verificarSesion } from './VerificarSesion';
     const Encabezado = () => {
     let redireccion = useNavigate();
     const [tokenActivo, setTokenActivo] = useState(false);
+    const [menuAbierto, setMenuAbierto] = useState(false);
 
     useEffect(() => {
         setTokenActivo(!!localStorage.getItem("token"));
@@ -17,39 +18,34 @@ import { verificarSesion } from './VerificarSesion';
         setTokenActivo(false);
     }
 
+    const toggleMenu = () => setMenuAbierto(!menuAbierto);
+
     return (
-        <header>
+        <header className="glass">
             <nav>
                 <div className="nav-logo">
                     <Link to="/">
-                        <img src="/logos/img2795.PNG" alt="Logo Corto en blanco" />
+                        <img src="/logos/img2795.PNG" alt="Logo Corto" />
                     </Link>
                 </div>
-                <div className="menu-icon">
-                    ☰
+                <div className="menu-icon" onClick={toggleMenu}>
+                    {menuAbierto ? '✕' : '☰'}
                 </div>
-                <div className="nav-menu" id="nav-menu">
+                <div className={`nav-menu ${menuAbierto ? 'active' : ''}`}>
                     <ul>
-                        <li><Link to="/" className='linkNav'>Inicio</Link></li>
-                        <li><Link to="/quienesSomos" className='linkNav'>¿Quienes somos?</Link></li>
-                        <li><Link to="/graficos" className='linkNav'>Graficos</Link></li>
-                        {!tokenActivo && (
-                            <>
-                            <li><Link to="/productos" className='linkNav'>Productos</Link></li>
-                            </>
-                        )}
+                        <li><Link to="/" className='linkNav' onClick={() => setMenuAbierto(false)}>Inicio</Link></li>
+                        <li><Link to="/quienesSomos" className='linkNav' onClick={() => setMenuAbierto(false)}>¿Quiénes somos?</Link></li>
+                        <li><Link to="/graficos" className='linkNav' onClick={() => setMenuAbierto(false)}>Gráficos</Link></li>
+                        <li><Link to="/productos" className='linkNav' onClick={() => setMenuAbierto(false)}>Menú</Link></li>
+                        <li><span onClick={() => { verificarSesion("/realizarPedido", redireccion); setMenuAbierto(false); }} className='linkNav'>Pedidos</span></li>
                         
-                        <li><li onClick={() => verificarSesion("/realizarPedido", redireccion)} className='linkNav'>RealizarPedido</li></li>
-                        
-                        {!tokenActivo && (
+                        {!tokenActivo ? (
                             <>
-                                <li><Link to="/inicioSesion" className='linkNav' id='iniciar-sesion-boton'>Iniciar sesión</Link></li>
-                                <li><Link to="/crearCuenta" className='linkNav' id='crear-cuenta-boton'>Crear cuenta</Link></li>
+                                <li><Link to="/inicioSesion" className='linkNav' id='iniciar-sesion-boton' onClick={() => setMenuAbierto(false)}>Iniciar Sesión</Link></li>
+                                <li><Link to="/crearCuenta" className='linkNav' onClick={() => setMenuAbierto(false)}>Crear Cuenta</Link></li>
                             </>
-                        )}
-
-                        {tokenActivo && (
-                            <li><li onClick={cerrarSesion} className='linkNav'>Cerrar sesión</li></li>
+                        ) : (
+                            <li><span onClick={cerrarSesion} className='linkNav'>Cerrar Sesión</span></li>
                         )}
                     </ul>
                 </div>

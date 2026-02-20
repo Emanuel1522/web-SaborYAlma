@@ -10,15 +10,10 @@ const PieDePagina = () => {
                     </ul>
                 </div>
                 <div className="logos-footer">
-                    <div className="logo-largo-footer">
-                        <img src="/logos/img2802.PNG" alt="" />
-                    </div>
-                    <div className="logo-corto-footer">
-                        <img src="/logos/img2795.PNG" alt="Logo Corto" />
-                    </div>
+                    <img src="/logos/img2802.PNG" alt="Logo Sabor y Alma" />
                 </div>
             </div>
-            <p>Copyright © 2024</p>
+            <p style={{ marginTop: '40px', color: 'var(--text-muted)', fontSize: '0.8rem' }}>© 2026 Sabor y Alma. Todos los derechos reservados.</p>
         </footer>
     );
 };

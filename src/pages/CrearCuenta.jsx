@@ -66,70 +66,56 @@ const CrearCuenta = () => {
     return (
         <>
             <Encabezado />
-            <main id="main-container-registro">
-                <div className="flex-registro">
-                    <section className="left-flex-registro">
-                        <div className="registro-titulo">
-                            <h2>Crea tu cuenta</h2>
-                        </div>
-                        <div className="registro-formulario" >
-                            <form onSubmit={(e) => {
-                                e.preventDefault();
-                                const terminosAceptados = document.getElementById("terminos").checked;
-                                if (!nombre || !apellido || !correo || !contraseña || !terminosAceptados) {
-                                    alertaGeneral(null, "Por favor, llena todos los campos y acepta los términos.", null)
-                                    return;
-                                }
-                                registrarUsuario();
-                            }}>
+            <main className="auth-container">
+                <div className="auth-flex glass">
+                    <section className="auth-left" style={{ padding: '40px' }}>
+                        <img src="/logos/img2803.PNG" alt="Logo Sabor y Alma" style={{ width: '150px', marginBottom: '20px' }} />
+                        <h2 className="serif" style={{ marginBottom: '20px' }}>Crea tu Cuenta</h2>
+                        <form onSubmit={(e) => {
+                            e.preventDefault();
+                            const terminosAceptados = document.getElementById("terminos").checked;
+                            if (!nombre || !apellido || !correo || !contraseña || !terminosAceptados) {
+                                alertaGeneral(null, "Por favor, llena todos los campos y acepta los términos.", null)
+                                return;
+                            }
+                            registrarUsuario();
+                        }}>
+                            <div className="form-grid">
                                 <input
                                     type="text"
                                     placeholder="NOMBRE"
-                                    id="nombres"
-                                    className="nom-registro"
                                     value={nombre}
                                     onChange={(e) => setNombre(e.target.value)} />
                                 <input
                                     type="text"
-                                    placeholder="CORREO"
-                                    id="usuario-email"
-                                    className="apell-registro"
-                                    value={correo}
-                                    onChange={(e) => setCorreo(e.target.value)} />
-                                <input
-                                    type="text"
                                     placeholder="APELLIDO"
-                                    id="apellidos"
-                                    className="U-ema"
                                     value={apellido}
                                     onChange={(e) => setApellido(e.target.value)} />
-                                <input
-                                    type="password"
-                                    id="contraseña"
-                                    name="contraseña"
-                                    placeholder="CONTRASEÑA"
-                                    className="con-registro"
-                                    value={contraseña}
-                                    onChange={(e) => setContraseña(e.target.value)} />
-                                <div className="terminos-registro">
-                                    <input type="checkbox" id="terminos" name="terminos" />
-                                    <label htmlFor="terminos">
-                                        He leído los <span className="subrayado-rojo">términos y condiciones de uso</span> y la <span className="subrayado-rojo">política de privacidad</span>.</label>
-                                </div>
-                                <div className="flex-div-form-registro-bottom">
-                                    <div className="boton-registro"></div>
-                                    <button
-                                        type="submit"
-                                        className="Btn-registro"
-                                        id="registrarBtn">
-                                        Registrarse
-                                    </button>
-                                </div>
-                            </form>
-                            <p>¿Ya tienes una cuenta? <Link to="/inicioSesion">Inicia sesion aqui</Link>.</p>
-                        </div>
+                            </div>
+                            <input
+                                type="email"
+                                placeholder="CORREO ELECTRÓNICO"
+                                value={correo}
+                                onChange={(e) => setCorreo(e.target.value)} />
+                            <input
+                                type="password"
+                                placeholder="CONTRASEÑA"
+                                value={contraseña}
+                                onChange={(e) => setContraseña(e.target.value)} />
+
+                            <div className="terminos-registro" style={{ marginBottom: '20px' }}>
+                                <input type="checkbox" id="terminos" name="terminos" style={{ width: 'auto', marginBottom: '0', marginRight: '10px' }} />
+                                <label htmlFor="terminos" style={{ fontSize: '0.85rem' }}>
+                                    He leído los <span className="subrayado-rojo">términos y condiciones</span> y la <span className="subrayado-rojo">política de privacidad</span>.</label>
+                            </div>
+
+                            <button type="submit" className="btn-premium" style={{ width: '100%' }}>
+                                Registrarse
+                            </button>
+                        </form>
+                        <p style={{ marginTop: '20px', fontSize: '0.9rem' }}>¿Ya tienes una cuenta? <Link to="/inicioSesion" className="subrayado-verde">Inicia sesión aquí</Link>.</p>
                     </section>
-                    <div className="right-flex-registro"></div>
+                    <div className="auth-right register-bg"></div>
                 </div>
             </main>
             <PieDePagina />

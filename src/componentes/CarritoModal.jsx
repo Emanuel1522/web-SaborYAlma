@@ -20,7 +20,7 @@ const CarritoModal = ({ mostrar, cerrar }) => {
                 confirmButtonText: "Cerrar",
             });
             return;
-        }else if (direccion.length === 0 || telefono.length === 0) {
+        } else if (direccion.length === 0 || telefono.length === 0) {
             Swal.fire({
                 title: "Por favor, completa todos los campos del formulario",
                 icon: "warning",
@@ -29,16 +29,16 @@ const CarritoModal = ({ mostrar, cerrar }) => {
             return;
         } else {
             Swal.fire({
-            title: "Pedido confirmado. ¡Gracias por tu compra!",
-            icon: "success",
-            confirmButtonText: "Listo",
-        }).then(() => {
-            setMostrandoFormulario(false)
-            setDireccion("");
-            setTelefono("");
-            carrito.map(item => (eliminarDelCarrito(item.id)))
-            cerrar();
-        })
+                title: "Pedido confirmado. ¡Gracias por tu compra!",
+                icon: "success",
+                confirmButtonText: "Listo",
+            }).then(() => {
+                setMostrandoFormulario(false)
+                setDireccion("");
+                setTelefono("");
+                carrito.map(item => (eliminarDelCarrito(item.id)))
+                cerrar();
+            })
         }
     }
 
@@ -65,19 +65,19 @@ const CarritoModal = ({ mostrar, cerrar }) => {
                 {mostrandoFormulario && (
                     <div className="formulario-pago">
                         <h3>Detalles de Entrega</h3>
-                        <input value={direccion} type="text" placeholder="Dirección" required className="input-pago" onChange={(e) => setDireccion(e.target.value.trim())}/>
-                        <input value={telefono} type="text" placeholder="Teléfono" required className="input-pago" onChange={(e) => setTelefono(e.target.value.trim())}/>
+                        <input value={direccion} type="text" placeholder="Dirección" required className="input-pago" onChange={(e) => setDireccion(e.target.value.trim())} />
+                        <input value={telefono} type="text" placeholder="Teléfono" required className="input-pago" onChange={(e) => setTelefono(e.target.value.trim())} />
                         <input type="text" placeholder="Detalles adicionales (opcional)" required className="input-pago" />
                         <div className="total-contenedor">
                             <span>Total:</span>
                             <span>${total.toFixed(2)}</span>
                         </div>
-                        <button className="btn-cerrar" onClick={confirmarPedido}>Confirmar pedido</button>
+                        <button className="btn-premium" onClick={confirmarPedido}>Confirmar Pedido</button>
                     </div>
                 )}
                 <div className="contenedorBotonesCarrito">
-                    <button className="btn-cerrar" onClick={() => setMostrandoFormulario(true)}>Continuar pedido</button>
-                    <button className="btn-cerrar" onClick={() => {cerrar(); setMostrandoFormulario(false)}}>Cerrar</button>
+                    <button className="btn-premium" style={{ background: 'var(--accent-secondary)' }} onClick={() => setMostrandoFormulario(true)}>Continuar</button>
+                    <button className="btn-premium" style={{ background: 'transparent', borderColor: 'var(--text-muted)' }} onClick={() => { cerrar(); setMostrandoFormulario(false) }}>Cerrar</button>
                 </div>
             </div>
         </div>

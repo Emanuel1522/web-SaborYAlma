@@ -8,45 +8,45 @@ const Productos = () => {
     return (
         <>
             <Encabezado />
-            <div>
-                <h1 className="menu-title">Lista de Platos</h1>
+            <div className="container" style={{ paddingTop: 'var(--header-height)' }}>
+                <h1 className="menu-title">Nuestra Carta</h1>
                 <div className="menu-container">
-                    <h2>Entradas / Starters</h2>
+                    <h2 className="serif">Entradas / Starters</h2>
                     <div className='listaPlatos'>
                         {entradas.map((entrada) => (
                             <TarjetaPlatosPedido
                                 key={entrada.id}
                                 plato={entrada}
-                                nombreBoton="Realizar pedido"
-                                requiereSesion={true}
+                                nombreBoton="Agregar al Carrito"
+                                requiereSesion={false}
                             />
                         ))}
                     </div>
-                    <h2>Platos Fuertes / Main Course</h2>
+
+                    <h2 className="serif">Platos Fuertes / Main Course</h2>
                     <div className='listaPlatos'>
                         {platosFuertes.map((platoFuerte) => (
                             <TarjetaPlatosPedido
                                 key={platoFuerte.id}
                                 plato={platoFuerte}
-                                nombreBoton="Realizar pedido"
-                                requiereSesion={true}
+                                nombreBoton="Agregar al Carrito"
+                                requiereSesion={false}
                             />
                         ))}
                     </div>
-                    <h2>Postres / Desserts</h2>
+
+                    <h2 className="serif">Postres / Desserts</h2>
                     <div className='listaPlatos'>
                         {postres.map((postre) => (
                             <TarjetaPlatosPedido
                                 key={postre.id}
                                 plato={postre}
-                                nombreBoton="Realizar pedido"
-                                requiereSesion={true}
+                                nombreBoton="Agregar al Carrito"
+                                requiereSesion={false}
                             />
                         ))}
                     </div>
                 </div>
-                <aside id="carrito">
-                </aside>
             </div>
             <PieDePagina />
         </>

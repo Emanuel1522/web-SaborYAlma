@@ -11,34 +11,27 @@ function PaginaPrincipal() {
             <Encabezado />
             <main>
                 <section className="main-section-home">
-                    <img src="/logos/img2802.PNG" alt="Logo sabor y alma en blanco y largo" />
+                    <img src="/logos/img2802.PNG" alt="Logo Sabor y Alma" />
                 </section>
                 <section className="main-section">
                     <div id="main-section-left">
                         <div id="div-1">
+                            <h3>Nuestra Esencia</h3>
                             <p>En Sabor y Alma, cada detalle está diseñado para ofrecer una experiencia gastronómica
-                                inolvidable.
-                                Nuestro restaurante combina la cocina de autor con una estética visual cautivadora, donde la
-                                creatividad y
-                                a calidad se encuentran en cada plato. Inspirados en la fusión de tradiciones culinarias y
-                                técnicas modernas, nuestros chefs crean menús únicos
-                                que despiertan los sentidos, invitando a cada comensal a un viaje lleno de sabores inesperados y
-                                presentaciones artísticas.</p>
+                                inolvidable. Nuestro restaurante combina la cocina de autor con una estética visual cautivadora, donde la
+                                creatividad y la calidad se encuentran en cada plato.</p>
                         </div>
                         <div id="div-3">
                             <p>El corazón de Sabor y Alma radica en la pasión por transformar lo simple en extraordinario.
-                                Cada ingrediente es seleccionado cuidadosamente, buscando frescura, autenticidad y
-                                sostenibilidad. Aquí, el arte no solo está en la cocina, sino también en la atmósfera: un
-                                entorno
-                                elegante y acogedor donde el diseño del espacio refleja el mismo nivel de cuidado y detalle que
+                                Aquí, un entorno elegante y acogedor donde el diseño del espacio refleja el mismo nivel de cuidado y detalle que
                                 nuestros platos.</p>
                         </div>
                         <div id="div-4">
-                            <Link to="/quienesSomos" className='boton'>Conoce mas</Link>
+                            <Link to="/quienesSomos" className='btn-premium'>Conoce más</Link>
                         </div>
                     </div>
                     <div id="div-2">
-                        <img src="/logos/img2797.PNG" alt="logo corto en rojo" />
+                        <img src="/logos/img2797.PNG" alt="Logo Sabor y Alma" />
                     </div>
                 </section>
                 <section id="platos-destacados">
@@ -64,75 +57,49 @@ function PaginaPrincipal() {
                         </div>
                     </section>
                     <div className="boton-menu">
-                        <Link to="/productos" className="btn">Conoce nuestro menú</Link>
+                        <Link to="/productos" className="btn-premium">Ver Menú Completo</Link>
                     </div>
                 </section>
                 <section id="reseñas-y-horarios">
                     <div className="reseñas">
-                        <h2>Experiencias en Sabor Y Alma</h2>
+                        <h2>Experiencias</h2>
                         <div className="reseña">
                             <div className="usuario-info">
-                                <img src={ellipse} alt="" />
+                                <img src={ellipse} alt="Usuario" />
                                 <div>
                                     <h4>Usuario1</h4>
-                                    <p>Fooder</p>
+                                    <p>Crítico Gastronómico</p>
                                 </div>
                             </div>
-                            <p>“La experiencia en el restaurante fue maravillosa, super recomendado, en especial el servicio es
-                                excelente”</p>
+                            <p>“La experiencia en el restaurante fue maravillosa, super recomendado. El servicio es impecable.”</p>
                         </div>
                         <div className="reseña">
                             <div className="usuario-info">
-                                <img src={ellipse} alt="" />
+                                <img src={ellipse} alt="Usuario" />
                                 <div>
                                     <h4>Usuario2</h4>
-                                    <p>Vlogger</p>
+                                    <p>Gourmet Lover</p>
                                 </div>
                             </div>
-                            <p>“Lo ame, me encanto todo, un restaurante verdaderamente encantador, sin duda alguna volveria”</p>
+                            <p>“Un restaurante verdaderamente encantador, el ambiente es único y sofisticado.”</p>
                         </div>
                     </div>
                     <div className="horario-reservas">
-                        <h2>Horario de atencion</h2>
+                        <h2>Horario de Atención</h2>
                         <div className="tabla-horarios">
                             <table>
                                 <tbody>
                                     <tr>
-                                        <td id="dia-semana">Lunes</td>
-                                        <td>11:00 AM A 11:00 PM</td>
+                                        <td>Lunes - Viernes</td>
+                                        <td>11:00 AM - 11:00 PM</td>
                                     </tr>
                                     <tr>
-                                        <td id="dia-semana">Martes</td>
-                                        <td>11:00 AM A 11:00 PM</td>
-                                    </tr>
-                                    <tr>
-                                        <td id="dia-semana">Miércoles</td>
-                                        <td>11:00 AM A 11:00 PM</td>
-                                    </tr>
-                                    <tr>
-                                        <td id="dia-semana">Jueves</td>
-                                        <td>11:00 AM A 11:00 PM</td>
-                                    </tr>
-                                    <tr>
-                                        <td id="dia-semana">Viernes</td>
-                                        <td>11:00 AM A 11:00 PM</td>
-                                    </tr>
-                                    <tr>
-                                        <td id="dia-semana">Sábado</td>
-                                        <td>11:00 AM A 11:00 PM</td>
-                                    </tr>
-                                    <tr>
-                                        <td id="dia-semana">Domingo</td>
-                                        <td>11:00 AM A 11:00 PM</td>
-                                    </tr>
-                                    <tr>
-                                        <td id="dia-semana">Festivo</td>
-                                        <td>11:00 AM A 11:00 PM</td>
+                                        <td>Sábado - Domingo</td>
+                                        <td>11:00 AM - 12:00 PM</td>
                                     </tr>
                                 </tbody>
                             </table>
-                            <p>Realiza el pedido y te llevamos tu comida hasta la puerta de tu casa!!!</p>
-                            <button onClick={()=> verificarSesion("/realizarPedido", redireccion)} className="boton-reservar">Realizar pedido</button>
+                            <button onClick={() => verificarSesion("/realizarPedido", redireccion)} className="btn-premium">Realizar Pedido</button>
                         </div>
                     </div>
                 </section>
